@@ -8,7 +8,7 @@ public class PlayerPlatformerController : PhysicsObject
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 12;
 
-    private Animator animator;
+    public Animator animator;
     private SpriteRenderer sprite;
 
     bool isGauche;
@@ -55,8 +55,10 @@ public class PlayerPlatformerController : PhysicsObject
         }
 
         animator.SetBool("grounded", grounded);
-        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
 
         targetVelocity = move * maxSpeed;
+
+        
     }
 }
