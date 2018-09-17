@@ -6,6 +6,9 @@ using System;
 public static class KeyImputManager
 {
     static Dictionary<string, KeyCode> keyMapping;
+    static Dictionary<string, KeyCode> defaultKeyMapping;
+    static bool keyMapHaveChange = false;
+    static bool isInitialize = false;
     static string[] keyMaps = new string[]
     {
         "Attack",
@@ -42,6 +45,7 @@ public static class KeyImputManager
         {
             keyMapping.Add(keyMaps[i], defaults[i]);
         }
+        isInitialize = true;
     }
 
     public static void SetKeyMap(string keyMap, KeyCode key)
@@ -66,6 +70,22 @@ public static class KeyImputManager
     public static bool GetKeyDown(string keyMap)
     {
         return Input.GetKeyDown(keyMapping[keyMap]);
+    }
+    public static void SaveActualKeyMapping()
+    {
+        defaultKeyMapping = keyMapping;
+    }
+    public static bool getKeyMapHasChange()
+    {
+        return keyMapHaveChange;
+    }
+    public static void changeKeyMapHaveChange()
+    {
+        keyMapHaveChange = !keyMapHaveChange;
+    } 
+    public static bool getIsInitialize()
+    {
+        return isInitialize;
     }
  
 }
