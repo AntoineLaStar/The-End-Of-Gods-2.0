@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     [SerializeField] public float maxSpeed = 6;
     [SerializeField] public float speed = 50f;
-    [SerializeField] public float jumpPower = 150f;
+    [SerializeField] public float jumpPower = 450f;
 
-    public bool grounded =false;
+    public bool grounded = false;
 
     private Rigidbody2D rb2d;
     private Animator anim;
@@ -34,6 +34,7 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetAxis("Jump") != 0 && grounded)
         {
             rb2d.AddForce(Vector2.up * jumpPower);
+            grounded = false;
         }
 
     }
@@ -56,33 +57,16 @@ public class PlayerMovement : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        print("CollisioneTuSacrament");
-
-        Vector3 dir = (collision.gameObject.transform.position - gameObject.transform.position).normalized;
-        if (dir.y < 0)
+        var normal = collision.contacts[0].normal;
+        if (normal.y > 0)
         {
             grounded = true;
-            print("Collision from bottom");
-        }
-
-    }
-
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        print("CollisioneTuSacrament");
-
-        Vector3 dir = (collision.gameObject.transform.position - gameObject.transform.position).normalized;
-        if (dir.y < 0)
-        {
-            grounded = true;
-            print("Collision from bottom");
         }
     }
 
-    public void OnTriggerExit2D(Collider2D collision)
-    {
-        grounded = false;
-    }
+
+
+
 }
