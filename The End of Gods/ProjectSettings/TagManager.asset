@@ -14,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Background
+  - Terrain
+  - BackgroundItem
   - 
   - 
   - 
@@ -42,6 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 4278607981
+    locked: 0
+  - name: BackgroundItem
+    uniqueID: 443016463
+    locked: 0
   - name: Floor
     uniqueID: 4254944689
+    locked: 0
+  - name: Player
+    uniqueID: 3685627339
     locked: 0
