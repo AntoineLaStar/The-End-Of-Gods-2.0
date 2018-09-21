@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using System.Linq;
 
 public static class KeyImputManager
 {
@@ -23,7 +24,7 @@ public static class KeyImputManager
     };
     static KeyCode[] defaults = new KeyCode[]
     {
-        
+
         KeyCode.LeftShift,
         KeyCode.A,
         KeyCode.D,
@@ -37,13 +38,13 @@ public static class KeyImputManager
 
     public static void KeyInputManager()
     {
-        
+
         InitializeDictionary();
     }
 
     private static void InitializeDictionary()
     {
-        
+
         keyMapping = new Dictionary<string, KeyCode>();
         for (int i = 0; i < keyMaps.Length; ++i)
         {
@@ -60,11 +61,27 @@ public static class KeyImputManager
         }
         else
         {
+            checkIfKeyIsUsed(key);
+
             keyMapping[keyMap] = key;
         }
 
 
     }
+
+    private static void checkIfKeyIsUsed(KeyCode key)
+    {
+        for (int index = 0; index < keyMapping.Count; index++)
+        {
+            string keyBind = keyMapping.ElementAt(index).Key;
+            KeyCode theKey = keyMapping.ElementAt(index).Value;
+            if (keyMapping[keyBind] == key)
+            {
+                keyMapping[keyBind] = KeyCode.None;
+            }
+        }
+    }
+
     public static string GetKeyBind(string keyMap)
 
     {
@@ -75,21 +92,34 @@ public static class KeyImputManager
     {
         return Input.GetKeyDown(keyMapping[keyMap]);
     }
+
+
     public static void SaveActualKeyMapping()
     {
         defaultKeyMapping = keyMapping;
     }
+
+
     public static bool getKeyMapHasChange()
     {
         return keyMapHaveChange;
     }
+
+
     public static void changeKeyMapHaveChange()
     {
         keyMapHaveChange = !keyMapHaveChange;
-    } 
+    }
+
+
     public static bool getIsInitialize()
     {
         return isInitialize;
     }
- 
+    public static void resetKeyBind()
+    {
+        keyMapHaveChange = true;
+        InitializeDictionary();
+
+    }
 }
