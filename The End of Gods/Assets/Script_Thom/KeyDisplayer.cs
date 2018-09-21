@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public  class KeyDisplayer : MonoBehaviour {
-    public Text Left, Right, DashLeft, DashRight, Jump, interact;
+    public Text Left, Right, DashLeft, DashRight, Jump, interact,Attack, Defence,Pause;
     // Use this for initialization
     void  Start () {
         if (!KeyImputManager.getIsInitialize())
@@ -18,7 +18,9 @@ public  class KeyDisplayer : MonoBehaviour {
         DashRight.text = KeyImputManager.GetKeyBind("DashRight");
         Jump.text = KeyImputManager.GetKeyBind("Jump");
         interact.text = KeyImputManager.GetKeyBind("interact");
-
+        Attack.text = KeyImputManager.GetKeyBind("Attack");
+        Defence.text = KeyImputManager.GetKeyBind("Defence");
+        Pause.text = KeyImputManager.GetKeyBind("Pause");
     }
 
 
@@ -32,7 +34,11 @@ public  class KeyDisplayer : MonoBehaviour {
             DashRight.text = KeyImputManager.GetKeyBind("DashRight");
             Jump.text = KeyImputManager.GetKeyBind("Jump");
             interact.text = KeyImputManager.GetKeyBind("interact");
+            Attack.text = KeyImputManager.GetKeyBind("Attack");
+            Defence.text = KeyImputManager.GetKeyBind("Defence");
+            Pause.text = KeyImputManager.GetKeyBind("Pause");
             KeyImputManager.changeKeyMapHaveChange();
+
         }
 	}
     

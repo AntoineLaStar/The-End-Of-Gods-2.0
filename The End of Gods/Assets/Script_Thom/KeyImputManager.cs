@@ -17,7 +17,9 @@ public static class KeyImputManager
         "DashLeft",
         "DashRight",
         "Jump",
-        "interact"
+        "interact",
+        "Defence",
+        "Pause"
     };
     static KeyCode[] defaults = new KeyCode[]
     {
@@ -28,7 +30,9 @@ public static class KeyImputManager
         KeyCode.Q,
         KeyCode.E,
         KeyCode.Space,
-        KeyCode.F
+        KeyCode.F,
+        KeyCode.C,
+        KeyCode.P
     };
 
     public static void KeyInputManager()

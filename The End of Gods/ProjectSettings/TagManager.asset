@@ -11,6 +11,8 @@ TagManager:
   - DashRight
   - Jump
   - interact
+  - Defence
+  - Pause
   layers:
   - Default
   - TransparentFX
