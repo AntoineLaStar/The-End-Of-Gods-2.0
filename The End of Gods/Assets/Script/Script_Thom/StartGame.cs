@@ -10,6 +10,6 @@ public class StartGame : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene("Scenes/TestScene");
+        SceneManager.LoadScene("Scenes/Hell");
     }
 }
