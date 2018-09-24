@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] public float maxSpeed = 6;
     [SerializeField] public float speed = 50f;
     [SerializeField] public float jumpPower = 450f;
-
+    KeyCode keyPressed = KeyCode.None;
     public bool grounded = false;
 
     private Rigidbody2D rb2d;
@@ -17,27 +17,31 @@ public class PlayerMovement : MonoBehaviour {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            transform.localScale = new Vector3(-0.25f, 0.25f, 0.25f);
-        }
-        else if (Input.GetAxis("Horizontal") > 0)
-        {
-            transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-        }
+    // Update is called once per frame
+    void Update()
+    {
 
-        if (Input.GetAxis("Jump") != 0 && grounded)
-        {
-            rb2d.AddForce(Vector2.up * jumpPower);
-            grounded = false;
-        }
+        
+                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Left"))
+                {
+                    
+                    transform.localScale = new Vector3(-0.25f, 0.25f, 0.25f);
+                }
+                else if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Right"))
+                {
+                    transform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
+                }
 
-    }
+                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Jump") && grounded)
+                {
+                    rb2d.AddForce(Vector2.up * jumpPower);
+                    grounded = false;
+                }
+            }
+
+        
+    
 
     private void FixedUpdate()
     {
