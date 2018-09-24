@@ -31,6 +31,7 @@ public class PlayerPlatformerController : PhysicsObject
                 {
 
                     move.x = -1.0f;
+                    
                 }
                 else if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Right"))
                 {
@@ -42,6 +43,7 @@ public class PlayerPlatformerController : PhysicsObject
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Jump") && grounded)
                 {
                     velocity.y = jumpTakeOffSpeed;
+                    animator.SetBool("isJump",true);
                 }
                 else if (Input.GetKeyUp(KeyImputManager.GetKeyBind("Jump").ToLower()))
                 {               
@@ -66,21 +68,18 @@ public class PlayerPlatformerController : PhysicsObject
                     isGauche = false;
                 }
 
-<<<<<<< HEAD
-        animator.SetBool("grounded", grounded);
-        animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
 
-        targetVelocity = move * maxSpeed;
-
-        
-=======
                 animator.SetBool("grounded", grounded);
-                animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+               
 
                 targetVelocity = move * maxSpeed;
             }
         }
->>>>>>> 4d43a5b91dddba3fe3f5f1d87488702eaa631557
+
+        
+        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+        animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
+
     }
 }
         
