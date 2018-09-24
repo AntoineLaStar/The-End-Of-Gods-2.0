@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerPlatformerController : PhysicsObject
 {
-
+    KeyCode keyPressed = KeyCode.None;
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 12;
 
@@ -22,40 +22,57 @@ public class PlayerPlatformerController : PhysicsObject
     protected override void ComputeVelocity()
     {
         Vector2 move = Vector2.zero;
-
-
-        move.x = Input.GetAxis("Horizontal");
-
-        if (Input.GetButtonDown("Jump") && grounded)
+        foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
-            velocity.y = jumpTakeOffSpeed;
-        }
-        else if (Input.GetButtonUp("Jump"))
-        {
-            if (velocity.y > 0)
+            if (Input.GetKey(vKey))
             {
-                velocity.y = velocity.y * 0.5f;
+                keyPressed = vKey;
+                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Left"))
+                {
+
+                    move.x = -1.0f;
+                }
+                else if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Right"))
+                {
+                    move.x = 1.0f;
+                }
+
+               
+
+                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Jump") && grounded)
+                {
+                    velocity.y = jumpTakeOffSpeed;
+                }
+                else if (Input.GetKeyUp(KeyImputManager.GetKeyBind("Jump").ToLower()))
+                {               
+                    if (velocity.y > 0)
+                    {
+                        velocity.y = velocity.y * 0.5f;
+                    }
+                }
+
+                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Left"))
+                {
+                    if (isGauche == false)
+                        sprite.flipX = !sprite.flipX;
+
+                    isGauche = true;
+                }
+                else if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Right"))
+                {
+                    if (isGauche == true)
+                        sprite.flipX = !sprite.flipX;
+
+                    isGauche = false;
+                }
+
+                animator.SetBool("grounded", grounded);
+                animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
+
+                targetVelocity = move * maxSpeed;
             }
         }
-
-        if (Input.GetAxis("Horizontal") < 0)
-        {
-            if (isGauche == false)
-            sprite.flipX = !sprite.flipX;
-
-            isGauche = true;
-        }
-        else if (Input.GetAxis("Horizontal") > 0)
-        {
-            if (isGauche == true)
-                sprite.flipX = !sprite.flipX;
-
-            isGauche = false;
-        }
-
-        animator.SetBool("grounded", grounded);
-        animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
-
-        targetVelocity = move * maxSpeed;
     }
 }
+        
+    
