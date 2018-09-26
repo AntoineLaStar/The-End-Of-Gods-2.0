@@ -8,7 +8,7 @@ public class PlayerPlatformerController : PhysicsObject
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 12;
 
-    public Animator animator;
+    private Animator animator;
     private SpriteRenderer sprite;
 
     bool isGauche;
@@ -17,6 +17,7 @@ public class PlayerPlatformerController : PhysicsObject
     void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     protected override void ComputeVelocity()
@@ -43,13 +44,14 @@ public class PlayerPlatformerController : PhysicsObject
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Jump") && grounded)
                 {
                     velocity.y = jumpTakeOffSpeed;
-                    animator.SetBool("isJump",true);
+                    
                 }
                 else if (Input.GetKeyUp(KeyImputManager.GetKeyBind("Jump").ToLower()))
                 {               
                     if (velocity.y > 0)
                     {
                         velocity.y = velocity.y * 0.5f;
+                        
                     }
                 }
 
@@ -68,19 +70,23 @@ public class PlayerPlatformerController : PhysicsObject
                     isGauche = false;
                 }
 
+                
 
-                animator.SetBool("grounded", grounded);
-               
+
 
                 targetVelocity = move * maxSpeed;
             }
         }
 
         
+
         animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
         animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
-
+        animator.SetBool("grounded", grounded);
     }
+
+
+  
 }
         
     
