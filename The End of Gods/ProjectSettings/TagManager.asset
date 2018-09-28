@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Left
+  - Defence
+  - Right
+  - Attack
+  - DashRight
+  - DashLeft
+  - Jump
+  - interact
+  - Pause
+  - InterfaceInteract
   layers:
   - Default
   - TransparentFX
