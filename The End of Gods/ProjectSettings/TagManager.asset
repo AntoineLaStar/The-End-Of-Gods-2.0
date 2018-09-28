@@ -5,6 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Left
+  - Defence
+  - Right
+  - Attack
+  - DashRight
+  - DashLeft
+  - Jump
+  - interact
+  - Pause
+  - Podium_Spear
+  - Podium_Sword
+  - Podium_Axe
   layers:
   - Default
   - TransparentFX
