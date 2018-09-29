@@ -5,13 +5,15 @@ using UnityEngine;
 public class InteractAction : MonoBehaviour {
     KeyCode keyPressed = KeyCode.None;
 
-    public Transform popupbox;
+    public GameObject popupHolder;
+    Transform popupbox ;
+
     public static string textstatus = "off";
 
 
     void Start () {
-		
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,11 +23,12 @@ public class InteractAction : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        popupbox = popupHolder.transform.Find("textpopup");
         if (textstatus == "off")
         {
             popupbox.GetComponent<TextMesh>().text = KeyImputManager.GetKeyBind("interact");
             textstatus = "on";
-            //Instantiate(popupbox, new Vector3(transform.position.x, transform.position.y, 0));
+            Instantiate(popupHolder, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0), Quaternion.Euler(0, 0, 0));
 
         }
 
@@ -39,7 +42,10 @@ public class InteractAction : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (textstatus == "on")
+        {
+            textstatus = "off";
+        }
     }
 
 }
