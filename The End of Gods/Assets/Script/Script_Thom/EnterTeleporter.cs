@@ -5,14 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class EnterTeleporter : MonoBehaviour {
     [SerializeField] int linkScene;
+   static string tag;
     static bool teleportHasBeenUsed = false;
 	void Start () {
 		
 	}
 	
-	void Update () {
-		
-	}
    static public bool getTeleportHasBeenUsed()
     {
         return teleportHasBeenUsed;
@@ -22,11 +20,12 @@ public class EnterTeleporter : MonoBehaviour {
     {
         foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
-            if (Input.GetKey(vKey))
+            if (Input.GetKeyUp(vKey))
             {
                 KeyCode keyPressed = vKey;
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("interact"))
                 {
+                    tag = gameObject.tag;
                     enterTeleporter();
                 }
             }
@@ -34,11 +33,29 @@ public class EnterTeleporter : MonoBehaviour {
     }
     private void enterTeleporter()
     {
+        if (TeleporterAccesManager.GetAccess(tag))
+        {
         teleportHasBeenUsed = true;
         SceneManager.LoadScene(linkScene);
+        }
+        else
+        {
+            changeMessageState();
+            DialogManager.RemoveMessage();
+
+
+        }
     }
     static public void setTeleportHasBeenUsed()
     {
         teleportHasBeenUsed = !teleportHasBeenUsed;
+    }
+    static public string getTag()
+    {
+        return tag;
+    }
+    public void changeMessageState()
+    {
+        GetComponentInChildren<Canvas>().enabled = true;
     }
 }
