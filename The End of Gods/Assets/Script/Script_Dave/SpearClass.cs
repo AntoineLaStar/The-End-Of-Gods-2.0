@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerClass : MonoBehaviour
+public class SpearClass
 {
-    public string currentClass = "";
-
-    public GameObject knight_1;
 
     // Use this for initialization
     void Start()
@@ -20,51 +17,16 @@ public class PlayerClass : MonoBehaviour
 
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public void podiumSpearChangeSprite()
     {
-        KeyCode keyPressed = KeyCode.None;
-        foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
-        {
-            if (Input.GetKey(vKey))
-            {
-                keyPressed = vKey;
+        //print("lae");
+        Sprite podium;
+        podium = Resources.Load<Sprite>("podium");
 
-                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("interact"))
-                {
-                    if (collision.gameObject.tag == "Podium_Spear")
-                    {
-                        Instantiate(knight_1);
-                        destroyPlayer();
-                        createCaracter();
+        GameObject Spear = GameObject.FindGameObjectWithTag("Podium_Spear");
 
-                        podiumSpearDestroy();
-                        currentClass = "Podium_Spear";
-                    }
-                }
-            }
-        }
-
-
-
+        //print("le");
+        Spear.GetComponent<SpriteRenderer>().sprite = podium;
+        
     }
-
-    public void destroyPlayer()
-    {
-        Destroy(GameObject.FindGameObjectWithTag("Player"));
-
-    }
-
-    public void createCaracter()
-    {
-        if (currentClass != "")
-        {
-            Instantiate(GameObject.FindGameObjectWithTag(currentClass));
-        }
-    }
-
-    public void podiumSpearDestroy()
-    {
-        Destroy(GameObject.FindGameObjectWithTag("Podium_Spear"));
-    }
-
 }

@@ -6,15 +6,15 @@ public class CarecterSelection : MonoBehaviour {
     public GameObject knight_1;
     public GameObject knight_2;
     public GameObject knight_3; 
-    public bool spearTaken = false;
-    public bool swordTaken = false;
-    public bool axeTaken = false;
-    public string currentClass = "";
-    
+
+    AxeClass Axe = new AxeClass();
+    SwordClass Sword = new SwordClass();
+    SpearClass Spear = new SpearClass();
+
     // Use this for initialization
     void Start () {
-        
-        
+
+       // Spear = GetComponent<SpearClass>();
 
     }
 	
@@ -34,81 +34,53 @@ public class CarecterSelection : MonoBehaviour {
 
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("interact"))
                 {
-                    
-                    if (collision.gameObject.tag == "Podium_Spear" && spearTaken == false)
+
+                    if (collision.gameObject.tag == "Podium_Spear")
                     {
+                        Spear.podiumSpearChangeSprite();
+                        destroyPlayer();
+                        Instantiate(knight_1);
+                        knight_1.transform.position =  new Vector2(-2,-2);
+                      
                         
-                            Instantiate(knight_1);
-                            
-                            spearTaken = true;
-                            axeTaken = false;
-                            swordTaken = false;
-                        destroyPlayer();
-                        createCaracter();
-                            
-                            podiumSpearDestroy();
-                            currentClass = "Podium_Spear";
+                        
                     }
-                    else if (collision.gameObject.tag == "Podium_Sword" && swordTaken == false)
-                    {                
-                            Instantiate(knight_2);
-                            swordTaken = true;
-                            spearTaken = false;
-                            axeTaken = false;
-                        destroyPlayer();
-                        createCaracter();
-                            
-                            podiumSWordDestroy();
-                            currentClass = "Podium_Sword";
-                    }
-                    else if (collision.gameObject.tag == "Podium_Axe" && axeTaken == false)
+
+                    else if (collision.gameObject.tag == "Podium_Sword")
                     {
-                            Instantiate(knight_3);
-                            axeTaken = true;
-                            spearTaken = false;
-                            swordTaken = false;
+                        Sword.podiumSwordChangeSprite();
                         destroyPlayer();
-                        createCaracter();
-                           
-                            podiumAxeDestroy();
-                            currentClass = "Podium_Axe";
+                        Instantiate(knight_3);
+                        knight_3.transform.position =  new Vector2(1,-2);
+                        
+                       
+                       
                     }
+
+                    else if (collision.gameObject.tag == "Podium_Axe")
+                    {
+                        Axe.podiumAxeChangeSprite();
+                        destroyPlayer();
+                        Instantiate(knight_2);
+                        knight_2.transform.position =  new Vector2(4,-2);
+                       
+                       
+                       
+                    }
+
+                    
+
                 }
             }
         }
     }
 
 
-    public void podiumSpearDestroy()
-    {
-        Destroy(GameObject.FindGameObjectWithTag("Podium_Spear"));
-    }
-
-
-    public void podiumSWordDestroy()
-    {
-        Destroy(GameObject.FindGameObjectWithTag("Podium_Sword"));
-    }
-
-
-    public void podiumAxeDestroy()
-    {
-        Destroy(GameObject.FindGameObjectWithTag("Podium_Axe"));
-    }
-
     public void destroyPlayer()
     {
         Destroy(GameObject.FindGameObjectWithTag("Player"));
-       
     }
 
-    public void createCaracter()
-    {
-        if (currentClass != "")
-        {
-            Instantiate(GameObject.FindGameObjectWithTag(currentClass));
-        }
-    }
 }
 
 
