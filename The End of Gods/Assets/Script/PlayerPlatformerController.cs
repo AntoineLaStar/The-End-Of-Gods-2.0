@@ -13,7 +13,6 @@ public class PlayerPlatformerController : PhysicsObject
 
     bool isGauche;
 
-    // Use this for initialization
     void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();

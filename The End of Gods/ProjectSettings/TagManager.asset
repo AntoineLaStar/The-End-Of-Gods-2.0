@@ -15,6 +15,7 @@ TagManager:
   - interact
   - Pause
   - InterfaceInteract
+  - Text
   layers:
   - Default
   - TransparentFX
