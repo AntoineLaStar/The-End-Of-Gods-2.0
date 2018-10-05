@@ -19,6 +19,7 @@ TagManager:
   - tpBleu
   - errorMessage
   - TpDoor
+  - MarchantDoor
   layers:
   - Default
   - TransparentFX

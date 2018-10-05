@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Teleporteur.unity
     guid: cc81d1f97ecc0254a9772df7001a8ea0
+  - enabled: 1
+    path: Assets/Scenes/Marchand.unity
+    guid: 5f190bba473a6ff479444a4f94a7fdb4
   m_configObjects: {}

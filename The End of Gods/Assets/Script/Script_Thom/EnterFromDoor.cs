@@ -11,9 +11,8 @@ public class EnterFromDoor : MonoBehaviour {
             
             if(gameObject.tag == EnterDoor.getTag())
             {
-                print("eg;rajgoi");
                 GameObject player = GameObject.FindWithTag("Player");    
-            player.transform.position = new Vector3(GameObject.FindGameObjectWithTag(tagDoor).transform.position.x, GameObject.FindGameObjectWithTag(tagDoor).transform.position.y ,0);
+            player.transform.position = new Vector3(GameObject.FindGameObjectWithTag(tagDoor).transform.position.x, GameObject.FindGameObjectWithTag(tagDoor).transform.position.y-1.30f ,0);
             EnterDoor.setTeleportHasBeenUsed();
             }
             
