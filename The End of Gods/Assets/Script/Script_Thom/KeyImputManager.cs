@@ -10,6 +10,7 @@ public static class KeyImputManager
     static Dictionary<string, KeyCode> defaultKeyMapping;
     static bool keyMapHaveChange = false;
     static bool isInitialize = false;
+    static bool mouvementLock = false;
     static string[] keyMaps = new string[]
     {
         "Attack",
@@ -38,8 +39,10 @@ public static class KeyImputManager
 
     public static void KeyInputManager()
     {
-
-        InitializeDictionary();
+        if (!isInitialize){
+ InitializeDictionary();
+        }
+       
     }
 
     private static void InitializeDictionary()
@@ -121,5 +124,14 @@ public static class KeyImputManager
         keyMapHaveChange = true;
         InitializeDictionary();
 
+    }
+
+    public static void changeLockState()
+    {
+        mouvementLock = !mouvementLock;
+    }
+    public static bool getMouvementLock()
+    {
+        return mouvementLock;
     }
 }

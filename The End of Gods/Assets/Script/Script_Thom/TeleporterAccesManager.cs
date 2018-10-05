@@ -6,6 +6,9 @@ using UnityEngine;
 public class TeleporterAccesManager : MonoBehaviour {
     static Dictionary<string, bool> teleporterAcces;
     static bool isInitialize = false;
+
+   
+
     static string[] telepoterName = new string[]
      {
         "tpBlack",
@@ -15,10 +18,10 @@ public class TeleporterAccesManager : MonoBehaviour {
     static bool[] defaultAcces = new bool[]
     {
         false,
-        false,
+        true,
         false
     };
-
+    
     public static void teleporterAccesManager()
     {
 
@@ -45,6 +48,10 @@ public class TeleporterAccesManager : MonoBehaviour {
     public static bool GetAccess(string teleporterName)
 
     {
+        if (isInitialize == false)
+        {
+            InitializeDictionary();
+        }
         return teleporterAcces[teleporterName];
     }
 

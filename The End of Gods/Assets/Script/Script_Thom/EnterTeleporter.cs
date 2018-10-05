@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class EnterTeleporter : MonoBehaviour {
     [SerializeField] int linkScene;
    static string tag;
+    [SerializeField] Canvas errorMessage;
     static bool teleportHasBeenUsed = false;
 	void Start () {
 		
@@ -18,19 +20,24 @@ public class EnterTeleporter : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
+        if(collision.tag == "Player")
         {
-            if (Input.GetKeyUp(vKey))
+            foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
             {
-                KeyCode keyPressed = vKey;
-                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("interact"))
+                if (Input.GetKeyUp(vKey))
                 {
-                    tag = gameObject.tag;
-                    enterTeleporter();
+                    KeyCode keyPressed = vKey;
+                    if (keyPressed.ToString() == KeyImputManager.GetKeyBind("interact"))
+                    {
+                        tag = gameObject.tag;
+                        enterTeleporter();
+                    }
                 }
             }
         }
+        
     }
+
     private void enterTeleporter()
     {
         if (TeleporterAccesManager.GetAccess(tag))
@@ -56,6 +63,16 @@ public class EnterTeleporter : MonoBehaviour {
     }
     public void changeMessageState()
     {
-        GetComponentInChildren<Canvas>().enabled = true;
+        if (errorMessage.enabled)
+        {
+            errorMessage.enabled = false;
+
+        }
+        else
+        {
+            errorMessage.enabled = true;
+        }
+        KeyImputManager.changeLockState();
+
     }
 }
