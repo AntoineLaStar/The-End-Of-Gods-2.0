@@ -2,24 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Info : MonoBehaviour {
-    public int startingHealth = 100;
-    public int currentHealth;
+public static class Player_Info {
+    public static int startingHealth = 100;
+    public static int currentHealth ;
+    public static float defence = 0.0f;
+    public static int degat = 10;
+    public static float attackDelay = 0;
 
-    PlayerPlatformerController PlayerMovement;
 
-    void Awake()
+    public static int CurrentHealth
     {
-        PlayerMovement = GetComponent<PlayerPlatformerController>();
-        currentHealth = startingHealth;
+        set { currentHealth = value; }
     }
 
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+
+
 }

@@ -7,6 +7,7 @@ public class PlayerPlatformerController : PhysicsObject
     KeyCode keyPressed = KeyCode.None;
     public float maxSpeed = 7;
     public float jumpTakeOffSpeed = 12;
+    public bool isAttacking = false;
 
     private Animator animator;
     private SpriteRenderer sprite;
@@ -24,6 +25,7 @@ public class PlayerPlatformerController : PhysicsObject
         Vector2 move = Vector2.zero;
         foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
+
             if (Input.GetKey(vKey))
             {
                 keyPressed = vKey;
@@ -37,8 +39,6 @@ public class PlayerPlatformerController : PhysicsObject
                 {
                     move.x = 1.0f;
                 }
-
-               
 
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Jump") && grounded)
                 {
@@ -76,6 +76,8 @@ public class PlayerPlatformerController : PhysicsObject
         animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
         animator.SetBool("grounded", grounded);
     }
+
+
 
 
   

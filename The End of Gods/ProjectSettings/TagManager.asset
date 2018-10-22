@@ -17,6 +17,9 @@ TagManager:
   - InterfaceInteract
   - Text
   - Damage
+  - HitSplat
+  - SwordCollider
+  - Dummy
   layers:
   - Default
   - TransparentFX
