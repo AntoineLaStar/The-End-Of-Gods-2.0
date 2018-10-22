@@ -23,9 +23,9 @@ public class AxeClass : MonoBehaviour {
         Sprite podium;
         podium = Resources.Load<Sprite>("podium");
 
-        GameObject Axe = GameObject.FindGameObjectWithTag("Podium_Axe"); 
-        
+        GameObject Axe = GameObject.FindGameObjectWithTag("Podium_Axe");
 
+        
         Axe.GetComponent<SpriteRenderer>().sprite = podium;
 
     }

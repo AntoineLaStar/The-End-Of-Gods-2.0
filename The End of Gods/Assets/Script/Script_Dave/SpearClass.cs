@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpearClass
+public class SpearClass : MonoBehaviour
 {
 
     // Use this for initialization
@@ -19,13 +19,13 @@ public class SpearClass
 
     public void podiumSpearChangeSprite()
     {
-        //print("lae");
+       
         Sprite podium;
-        podium = Resources.Load<Sprite>("podium");
+       
 
         GameObject Spear = GameObject.FindGameObjectWithTag("Podium_Spear");
 
-        //print("le");
+        podium = Resources.Load<Sprite>("podium");
         Spear.GetComponent<SpriteRenderer>().sprite = podium;
         
     }

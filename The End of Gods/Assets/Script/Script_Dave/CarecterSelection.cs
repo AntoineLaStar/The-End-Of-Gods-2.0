@@ -10,7 +10,7 @@ public class CarecterSelection : MonoBehaviour {
     AxeClass Axe = new AxeClass();
     SwordClass Sword = new SwordClass();
     SpearClass Spear = new SpearClass();
-
+    
     // Use this for initialization
     void Start () {
 
@@ -25,48 +25,53 @@ public class CarecterSelection : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        KeyCode keyPressed = KeyCode.None;
+        KeyCode keyUp = KeyCode.None;
         foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
-            if (Input.GetKey(vKey))
+            if (Input.GetKeyUp(vKey))
             {
-                keyPressed = vKey;
+                keyUp = vKey;
+                
 
-                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("interact"))
+                if (keyUp.ToString() == KeyImputManager.GetKeyBind("interact"))
                 {
 
-                    if (collision.gameObject.tag == "Podium_Spear")
-                    {
+                   
+                        if (collision.gameObject.tag == "Podium_Spear")
+                        {
+                       
                         Spear.podiumSpearChangeSprite();
-                        destroyPlayer();
-                        Instantiate(knight_1);
-                        knight_1.transform.position =  new Vector2(-2,-2);
-                      
-                        
-                        
-                    }
-
-                    else if (collision.gameObject.tag == "Podium_Sword")
-                    {
+                            
+                            Instantiate(knight_1);
+                            knight_1.transform.position = new Vector2(-2, -2);
+                            
+                            destroyPlayer();
+                        }
+                    
+                   
+                        if (collision.gameObject.tag == "Podium_Sword")
+                        {
+                        print("allo");
                         Sword.podiumSwordChangeSprite();
-                        destroyPlayer();
-                        Instantiate(knight_3);
-                        knight_3.transform.position =  new Vector2(1,-2);
-                        
-                       
-                       
-                    }
+                           
+                            Instantiate(knight_3);
+                            knight_3.transform.position = new Vector2(1, -2);
+                            
+                            destroyPlayer();
+                        }
+                     
 
-                    else if (collision.gameObject.tag == "Podium_Axe")
-                    {
-                        Axe.podiumAxeChangeSprite();
-                        destroyPlayer();
-                        Instantiate(knight_2);
-                        knight_2.transform.position =  new Vector2(4,-2);
-                       
-                       
-                       
-                    }
+                        if (collision.gameObject.tag == "Podium_Axe")
+                        {
+                            Axe.podiumAxeChangeSprite();
+                            
+                            Instantiate(knight_2);
+                            knight_2.transform.position = new Vector2(4, -2);
+                            
+                            destroyPlayer();
+
+                        }
+                    
 
                     
 
