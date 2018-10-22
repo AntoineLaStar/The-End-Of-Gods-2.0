@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class DialogManager : MonoBehaviour
 {
-
-   static bool DialogIsShowen;
+    static bool DialogIsShowen;
 
     static public void RemoveMessage()
     {
@@ -15,7 +14,6 @@ public class DialogManager : MonoBehaviour
             {
                 if (Input.GetKeyUp(vKey))
                 {
-                    
                     changeDialogState();
                 }
 
