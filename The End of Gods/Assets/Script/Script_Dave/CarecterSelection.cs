@@ -37,7 +37,7 @@ public class CarecterSelection : MonoBehaviour {
                 {
 
                    
-                        if (collision.gameObject.tag == "Podium_Spear")
+                      /*  if (collision.gameObject.tag == "Podium_Spear")
                         {
                        
                         Spear.podiumSpearChangeSprite();
@@ -46,12 +46,12 @@ public class CarecterSelection : MonoBehaviour {
                             knight_1.transform.position = new Vector2(-2, -2);
                             
                             destroyPlayer();
-                        }
+                        }*/
                     
                    
                         if (collision.gameObject.tag == "Podium_Sword")
                         {
-                        print("allo");
+                       
                         Sword.podiumSwordChangeSprite();
                            
                             Instantiate(knight_3);
