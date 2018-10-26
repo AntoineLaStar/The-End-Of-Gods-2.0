@@ -5,6 +5,21 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - Left
+  - Defence
+  - Right
+  - Attack
+  - DashRight
+  - DashLeft
+  - Jump
+  - interact
+  - Pause
+  - tpBlack
+  - tpMauve
+  - tpBleu
+  - errorMessage
+  - TpDoor
+  - MarchantDoor
   layers:
   - Default
   - TransparentFX
@@ -45,11 +60,14 @@ TagManager:
   - name: Background
     uniqueID: 4278607981
     locked: 0
-  - name: BackgroundItem
-    uniqueID: 443016463
-    locked: 0
   - name: Floor
     uniqueID: 4254944689
+    locked: 0
+  - name: message
+    uniqueID: 315892535
+    locked: 0
+  - name: BackgroundItem
+    uniqueID: 443016463
     locked: 0
   - name: Player
     uniqueID: 3685627339
