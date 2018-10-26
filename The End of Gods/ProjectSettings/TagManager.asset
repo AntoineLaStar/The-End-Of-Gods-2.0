@@ -20,6 +20,9 @@ TagManager:
   - HitSplat
   - SwordCollider
   - Dummy
+  - Podium_Spear
+  - Podium_Sword
+  - Podium_Axe
   layers:
   - Default
   - TransparentFX
