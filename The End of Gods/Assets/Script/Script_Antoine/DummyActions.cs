@@ -7,6 +7,7 @@ public class DummyActions : MonoBehaviour {
     public bool isAttacked = false;
     Animator animator;
     GameObject hitsplat;
+    [SerializeField] GameObject hitsplatPrefab;
 	
 	void Start () {
         animator = gameObject.GetComponent<Animator>();
@@ -24,27 +25,33 @@ public class DummyActions : MonoBehaviour {
         Dummy_Info.CurrentHealth -= amount;
         triggerHitSplat(amount);
         isAttacked = true;
-        animator.SetBool("isAttacked", isAttacked);
-        
+        triggerHurtAnimation();
+
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        stopHurtAnimation();
     }
 
 
     public void triggerHitSplat(int amount)
     {
-        hitsplat = GameObject.FindGameObjectWithTag("HitSplat");
+        hitsplat = hitsplatPrefab;
         GameObject hitsplatClone = Instantiate(hitsplat, gameObject.transform.position, gameObject.transform.rotation);
     }
 
     public void triggerHurtAnimation()
     {
         isAttacked = true;
-        animator.SetTrigger("isAttacked");
-        animator.Play("isAttacked");
+        animator.Play("DummyHurt",-1,0f);
+        Invoke("stopHurtAnimation", 1f);
     }
 
     public void stopHurtAnimation()
     {
-        animator.ResetTrigger("isAttacked");
         isAttacked = false;
+        //animator.ResetTrigger("isAttacked");
     }
 }

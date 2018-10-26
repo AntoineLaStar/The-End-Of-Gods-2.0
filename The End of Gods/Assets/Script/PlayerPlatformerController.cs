@@ -11,6 +11,7 @@ public class PlayerPlatformerController : PhysicsObject
 
     private Animator animator;
     private SpriteRenderer sprite;
+    Collider2D test;
 
     bool isGauche;
 
@@ -18,6 +19,7 @@ public class PlayerPlatformerController : PhysicsObject
     {
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        test = GameObject.FindGameObjectWithTag("SwordCollider").GetComponent<Collider2D>();
     }
 
     protected override void ComputeVelocity()
@@ -57,14 +59,21 @@ public class PlayerPlatformerController : PhysicsObject
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Left"))
                 {
                     if (isGauche == false)
+                    {
                         sprite.flipX = !sprite.flipX;
+                        test.offset *= -1;
+                    }
+                        
 
                     isGauche = true;
                 }
                 else if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Right"))
                 {
                     if (isGauche == true)
+                    {
                         sprite.flipX = !sprite.flipX;
+                        test.offset *= -1;
+                    }
 
                     isGauche = false;
                 }

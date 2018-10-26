@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CollisonWithEnnemi : MonoBehaviour {
 
+    KeyCode keyPressed = KeyCode.None;
     GameObject player;
     bool ableToHit = true;
     float PlayerAttackDelay = Player_Info.attackDelay;
@@ -22,6 +23,28 @@ public class CollisonWithEnnemi : MonoBehaviour {
             ableToHit = true;
         }
 
+
+        foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
+        {
+            if (Input.GetKey(vKey))
+            {
+                keyPressed = vKey;
+
+                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
+                {
+
+                    gameObject.GetComponent<Collider2D>().enabled = true;
+                    Invoke("enableColliderWeapon", 0.1f);
+                }
+
+            }
+        }
+
+    }
+
+    private void enableColliderWeapon()
+    {
+        gameObject.GetComponent<Collider2D>().enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
