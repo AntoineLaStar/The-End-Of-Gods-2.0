@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -81,10 +81,9 @@ public class PlayerPlatformerController : PhysicsObject
             }
 
 
-
-            animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
-            animator.SetBool("grounded", grounded);
-        }
+        animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
+        animator.SetBool("grounded", grounded);
+    }
 
 
     }
