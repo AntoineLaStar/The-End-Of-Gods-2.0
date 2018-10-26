@@ -9,19 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1714413537499612}
+  m_RootGameObject: {fileID: 1657835209634040}
   m_IsPrefabAsset: 1
---- !u!1 &1714413537499612
+--- !u!1 &1657835209634040
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4875449040002258}
-  - component: {fileID: 212865232898694600}
-  - component: {fileID: 114288533538974276}
-  - component: {fileID: 61801341613052124}
+  - component: {fileID: 4794789145893806}
+  - component: {fileID: 212641649548240528}
+  - component: {fileID: 114248051327769862}
+  - component: {fileID: 61662968670296022}
+  - component: {fileID: 114665478509178506}
   m_Layer: 0
   m_Name: Axe_Podium
   m_TagString: Podium_Axe
@@ -29,12 +30,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4875449040002258
+--- !u!4 &4794789145893806
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1714413537499612}
+  m_GameObject: {fileID: 1657835209634040}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.18, y: -1.02, z: 0}
   m_LocalScale: {x: 2.97, y: 3.5, z: 3.0011044}
@@ -42,12 +43,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61801341613052124
+--- !u!61 &61662968670296022
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1714413537499612}
+  m_GameObject: {fileID: 1657835209634040}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -67,12 +68,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.4}
   m_EdgeRadius: 0
---- !u!114 &114288533538974276
+--- !u!114 &114248051327769862
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1714413537499612}
+  m_GameObject: {fileID: 1657835209634040}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6d2df51f14326640a4fb076770965b5, type: 3}
@@ -81,12 +82,28 @@ MonoBehaviour:
   direction: 1
   floatStrength: 0.2
   floatSpeed: 2
---- !u!212 &212865232898694600
+--- !u!114 &114665478509178506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1657835209634040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ea0c6e792595344fac603ff18ec7a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knight_2: {fileID: 1998577192093060, guid: a0a890492d95df347a5a70e511ccdab4, type: 2}
+  PodiumSprite: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
+  PodiumSpriteAxe: {fileID: 21300000, guid: 252e7715d1685b94d92fc2d8d536fe81, type: 3}
+  PodiumSpriteSpear: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}
+  PodiumSpriteSword: {fileID: 21300000, guid: e4545947d344ec144a3d62dd188f9dd5, type: 3}
+--- !u!212 &212641649548240528
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1714413537499612}
+  m_GameObject: {fileID: 1657835209634040}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
