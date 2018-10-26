@@ -244,10 +244,11 @@ GameObject:
   - component: {fileID: 634835357}
   - component: {fileID: 634835360}
   - component: {fileID: 634835362}
+  - component: {fileID: 634835363}
   - component: {fileID: 634835361}
   - component: {fileID: 634835359}
   m_Layer: 0
-  m_Name: Player
+  m_Name: knight_base
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,6 +403,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD:The End of Gods/Assets/Scenes/Hell.unity
 --- !u!1001 &753409760
 Prefab:
   m_ObjectHideFlags: 0
@@ -462,6 +464,22 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e327545512d87ee4e8b285f24c6f2a43, type: 2}
   m_IsPrefabAsset: 0
+=======
+--- !u!114 &634835363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 634835355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d8754564f4ba304aa019211500005b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knight_1: {fileID: 1208498228520986, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
+  Podium: {fileID: 0}
+  PodiumSpriteSpear: {fileID: 0}
+>>>>>>> 55644210c076253b8803abb0c7cd217ccc56abf5:The End of Gods/Assets/Scenes/SelectionPerso.unity
 --- !u!1 &968951879
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +555,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD:The End of Gods/Assets/Scenes/Hell.unity
 --- !u!1 &969261344
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +782,8 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e327545512d87ee4e8b285f24c6f2a43, type: 2}
   m_IsPrefabAsset: 0
+=======
+>>>>>>> 55644210c076253b8803abb0c7cd217ccc56abf5:The End of Gods/Assets/Scenes/SelectionPerso.unity
 --- !u!1 &1451117137
 GameObject:
   m_ObjectHideFlags: 0
@@ -11711,40 +11732,52 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1709746736
-GameObject:
+--- !u!1001 &1568294790
+Prefab:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1709746739}
-  - component: {fileID: 1709746738}
-  - component: {fileID: 1709746737}
-  m_Layer: 0
-  m_Name: Sword_podium
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1709746737
-MonoBehaviour:
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4435079209795968, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435079209795968, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435079209795968, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435079209795968, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435079209795968, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435079209795968, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435079209795968, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435079209795968, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &1623904420
+Prefab:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1709746736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d2df51f14326640a4fb076770965b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: -1
-  floatStrength: 0.2
-  floatSpeed: 2
---- !u!212 &1709746738
-SpriteRenderer:
-  m_ObjectHideFlags: 0
+<<<<<<< HEAD:The End of Gods/Assets/Scenes/Hell.unity
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1709746736}
@@ -11790,14 +11823,86 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!4 &1709746739
 Transform:
+=======
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4794789145893806, guid: 32d0f60c03f97c64e9b9e1319f4201a8, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794789145893806, guid: 32d0f60c03f97c64e9b9e1319f4201a8, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794789145893806, guid: 32d0f60c03f97c64e9b9e1319f4201a8, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794789145893806, guid: 32d0f60c03f97c64e9b9e1319f4201a8, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794789145893806, guid: 32d0f60c03f97c64e9b9e1319f4201a8, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794789145893806, guid: 32d0f60c03f97c64e9b9e1319f4201a8, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794789145893806, guid: 32d0f60c03f97c64e9b9e1319f4201a8, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4794789145893806, guid: 32d0f60c03f97c64e9b9e1319f4201a8, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 32d0f60c03f97c64e9b9e1319f4201a8, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1001 &2120333351
+Prefab:
+>>>>>>> 55644210c076253b8803abb0c7cd217ccc56abf5:The End of Gods/Assets/Scenes/SelectionPerso.unity
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1709746736}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.05, y: -1.09, z: 0}
-  m_LocalScale: {x: 2.97, y: 3.5, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4544506591863834, guid: 95077e27dabb705408f613693dd647fa, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544506591863834, guid: 95077e27dabb705408f613693dd647fa, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544506591863834, guid: 95077e27dabb705408f613693dd647fa, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544506591863834, guid: 95077e27dabb705408f613693dd647fa, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544506591863834, guid: 95077e27dabb705408f613693dd647fa, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544506591863834, guid: 95077e27dabb705408f613693dd647fa, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544506591863834, guid: 95077e27dabb705408f613693dd647fa, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4544506591863834, guid: 95077e27dabb705408f613693dd647fa, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 95077e27dabb705408f613693dd647fa, type: 2}
+  m_IsPrefabAsset: 0
