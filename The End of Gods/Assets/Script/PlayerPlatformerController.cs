@@ -23,69 +23,69 @@ public class PlayerPlatformerController : PhysicsObject
     protected override void ComputeVelocity()
     {
         Vector2 move = Vector2.zero;
-        foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
+        if (!KeyImputManager.getMouvementLock())
         {
-            if (Input.GetKey(vKey))
+            foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
             {
-                keyPressed = vKey;
-                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Left"))
+                if (Input.GetKey(vKey))
                 {
-
-                    move.x = -1.0f;
-                    
-                }
-                else if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Right"))
-                {
-                    move.x = 1.0f;
-                }
-
-               
-
-                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Jump") && grounded)
-                {
-                    velocity.y = jumpTakeOffSpeed;
-                    
-                }
-                else if (Input.GetKeyUp(KeyImputManager.GetKeyBind("Jump").ToLower()))
-                {               
-                    if (velocity.y > 0)
+                    keyPressed = vKey;
+                    if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Left"))
                     {
-                        velocity.y = velocity.y * 0.5f;
-                        
+
+                        move.x = -1.0f;
+
                     }
+                    else if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Right"))
+                    {
+                        move.x = 1.0f;
+                    }
+
+
+
+                    if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Jump") && grounded)
+                    {
+                        velocity.y = jumpTakeOffSpeed;
+
+                    }
+                    else if (Input.GetKeyUp(KeyImputManager.GetKeyBind("Jump").ToLower()))
+                    {
+                        if (velocity.y > 0)
+                        {
+                            velocity.y = velocity.y * 0.5f;
+
+                        }
+                    }
+
+                    if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Left"))
+                    {
+                        if (isGauche == false)
+                            sprite.flipX = !sprite.flipX;
+
+                        isGauche = true;
+                    }
+                    else if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Right"))
+                    {
+                        if (isGauche == true)
+                            sprite.flipX = !sprite.flipX;
+
+                        isGauche = false;
+                    }
+
+
+
+
+
+                    targetVelocity = move * maxSpeed;
                 }
-
-                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Left"))
-                {
-                    if (isGauche == false)
-                        sprite.flipX = !sprite.flipX;
-
-                    isGauche = true;
-                }
-                else if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Right"))
-                {
-                    if (isGauche == true)
-                        sprite.flipX = !sprite.flipX;
-
-                    isGauche = false;
-                }
-
-                
-
-
-
-                targetVelocity = move * maxSpeed;
             }
-        }
 
-        
 
         animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
         animator.SetBool("grounded", grounded);
     }
 
-
-  
+    }
 }
         
     
