@@ -12,6 +12,7 @@ public class MarchandDialog : MonoBehaviour {
 
     private void Start()
     {
+        shopIsOpen = false;
         DialogIsShowen = false ;
         wait = false;
     }
@@ -48,7 +49,7 @@ public class MarchandDialog : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!DialogIsShowen)
+        if (!DialogIsShowen && !shopIsOpen)
         {
             if (collision.tag == "Player")
             {
@@ -74,13 +75,22 @@ public class MarchandDialog : MonoBehaviour {
         shop.enabled = true;
         marchandDialog.enabled = false;
         DialogIsShowen = false;
+        shopIsOpen = true;
     }
 
     private void ShowDialog()
     {
         marchandDialog.enabled =true;
         DialogIsShowen = true;
-        KeyImputManager.changeLockState();
+        KeyImputManager.LockPlayerMouvement();
+    }
+    
+     public void closedShop()
+    {
+        KeyImputManager.freePlayerMouvement();
+        shopIsOpen = false ;
+        shop.enabled = false;
+        
     }
 }
 

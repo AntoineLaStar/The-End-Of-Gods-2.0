@@ -130,6 +130,14 @@ public static class KeyImputManager
     {
         mouvementLock = !mouvementLock;
     }
+    public static void freePlayerMouvement()
+    {
+        mouvementLock = false;
+    }
+    public static void LockPlayerMouvement()
+    {
+        mouvementLock = true;
+    }
     public static bool getMouvementLock()
     {
         return mouvementLock;
