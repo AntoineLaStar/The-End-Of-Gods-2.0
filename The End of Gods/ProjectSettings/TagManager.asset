@@ -14,12 +14,17 @@ TagManager:
   - Jump
   - interact
   - Pause
+
+  - Podium_Spear
+  - Podium_Sword
+  - Podium_Axe
   - tpBlack
   - tpMauve
   - tpBleu
   - errorMessage
   - TpDoor
   - MarchantDoor
+
   layers:
   - Default
   - TransparentFX
