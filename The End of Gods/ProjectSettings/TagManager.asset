@@ -14,18 +14,12 @@ TagManager:
   - Jump
   - interact
   - Pause
-<<<<<<< HEAD
   - InterfaceInteract
   - Text
   - Damage
   - HitSplat
   - SwordCollider
   - Dummy
-=======
-  - Podium_Spear
-  - Podium_Sword
-  - Podium_Axe
->>>>>>> a9fc1f170eb101a6948cc3178235e4fadcfdcfa9
   layers:
   - Default
   - TransparentFX
