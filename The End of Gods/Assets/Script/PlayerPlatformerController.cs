@@ -19,7 +19,6 @@ public class PlayerPlatformerController : PhysicsObject
     {
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        test = GameObject.FindGameObjectWithTag("SwordCollider").GetComponent<Collider2D>();
     }
 
     protected override void ComputeVelocity()
@@ -60,6 +59,7 @@ public class PlayerPlatformerController : PhysicsObject
                 {
                     if (isGauche == false)
                     {
+                        test = GameObject.FindGameObjectWithTag("SwordCollider").GetComponent<Collider2D>();
                         sprite.flipX = !sprite.flipX;
                         test.offset *= -1;
                     }
@@ -71,6 +71,7 @@ public class PlayerPlatformerController : PhysicsObject
                 {
                     if (isGauche == true)
                     {
+                        test = GameObject.FindGameObjectWithTag("SwordCollider").GetComponent<Collider2D>();
                         sprite.flipX = !sprite.flipX;
                         test.offset *= -1;
                     }

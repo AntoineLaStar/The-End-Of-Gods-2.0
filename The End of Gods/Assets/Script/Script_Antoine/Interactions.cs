@@ -17,7 +17,7 @@ public class Interactions : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "Player")
+        if (other.tag == "Player")
         {
             interactAction();
         }
