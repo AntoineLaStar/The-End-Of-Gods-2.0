@@ -129,6 +129,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0c6e792595344fac603ff18ec7a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knight_2: {fileID: 1998577192093060, guid: a0a890492d95df347a5a70e511ccdab4, type: 2}
+  PodiumSprite: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
+  PodiumSpriteAxe: {fileID: 21300000, guid: 252e7715d1685b94d92fc2d8d536fe81, type: 3}
+  PodiumSpriteSpear: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}
+  PodiumSpriteSword: {fileID: 21300000, guid: e4545947d344ec144a3d62dd188f9dd5, type: 3}
 --- !u!1 &293083539
 GameObject:
   m_ObjectHideFlags: 0
@@ -264,7 +269,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1142c3c669cd40b478a13bd3c51337a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  podium: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
+  knight_3: {fileID: 1519130699014168, guid: fc14db40add8d4c43847dc9c7af38ca6, type: 2}
+  PodiumSprite: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
+  PodiumSpriteSword: {fileID: 21300000, guid: e4545947d344ec144a3d62dd188f9dd5, type: 3}
+  PodiumSpriteSpear: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}
+  PodiumSpriteAxe: {fileID: 21300000, guid: 252e7715d1685b94d92fc2d8d536fe81, type: 3}
 --- !u!1 &634835355
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,9 +456,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d8754564f4ba304aa019211500005b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knight_1: {fileID: 1827278971334216, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
-  knight_2: {fileID: 1373418048125556, guid: a0a890492d95df347a5a70e511ccdab4, type: 2}
-  knight_3: {fileID: 1695552693854496, guid: fc14db40add8d4c43847dc9c7af38ca6, type: 2}
+  knight_1: {fileID: 1208498228520986, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
+  Podium: {fileID: 0}
+  PodiumSpriteSpear: {fileID: 0}
 --- !u!1 &949009172 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1740614028513200, guid: 95077e27dabb705408f613693dd647fa,
@@ -466,9 +475,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fcbae9050f01e479d313acf4cb4743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knight_1: {fileID: 1827278971334216, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
+  knight_1: {fileID: 1208498228520986, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
   PodiumSprite: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
   PodiumSpriteSpear: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}
+  PodiumSpriteSword: {fileID: 21300000, guid: e4545947d344ec144a3d62dd188f9dd5, type: 3}
+  PodiumSpriteAxe: {fileID: 21300000, guid: 252e7715d1685b94d92fc2d8d536fe81, type: 3}
 --- !u!1 &968951879
 GameObject:
   m_ObjectHideFlags: 0
