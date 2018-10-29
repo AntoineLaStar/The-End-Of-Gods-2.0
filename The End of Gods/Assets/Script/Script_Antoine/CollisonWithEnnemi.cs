@@ -6,7 +6,6 @@ public class CollisonWithEnnemi : MonoBehaviour {
 
     KeyCode keyPressed = KeyCode.None;
     GameObject player;
-    bool ableToHit = true;
     float PlayerAttackDelay = Player_Info.attackDelay;
     float timeForNextAttack;
 
@@ -20,7 +19,7 @@ public class CollisonWithEnnemi : MonoBehaviour {
 
         if (timeForNextAttack <= 0f)
         {
-            ableToHit = true;
+            Player_Info.ableToHit = true;
         }
 
 
@@ -32,6 +31,7 @@ public class CollisonWithEnnemi : MonoBehaviour {
 
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
                 {
+
 
                     gameObject.GetComponent<Collider2D>().enabled = true;
                     Invoke("enableColliderWeapon", 0.1f);
@@ -49,10 +49,10 @@ public class CollisonWithEnnemi : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Dummy" && ableToHit == true)
+        if (collision.gameObject.tag == "Dummy" && Player_Info.ableToHit == true)
         {
             timeForNextAttack = Player_Info.attackDelay;
-            ableToHit = false;
+            Player_Info.ableToHit = false;
             collision.gameObject.GetComponent<DummyActions>().DealDamage(Player_Info.degat);
         }
        
