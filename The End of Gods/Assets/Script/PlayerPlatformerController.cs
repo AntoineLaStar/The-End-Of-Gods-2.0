@@ -9,6 +9,7 @@ public class PlayerPlatformerController : PhysicsObject
     public float jumpTakeOffSpeed = 12;
     public bool isAttacking = false;
 
+
     private Animator animator;
     private SpriteRenderer sprite;
     Collider2D test;
@@ -79,18 +80,49 @@ public class PlayerPlatformerController : PhysicsObject
                     isGauche = false;
                 }
 
+                
+
+
+                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
+                {
+                   
+                    if (Player_Info.ableToHit == true)
+                    {
+                        if(grounded == true)
+                        {
+                            //animator.Play("knight_2_Attack");
+                            //animator.Play("knight_1_Attack");
+                            //animator.Play("knight_3_Attack");
+                            Invoke("StrikeFalse", 1);
+                        }
+                       
+                         
+                    }
+                    
+
+                   
+                }
+
                 targetVelocity = move * maxSpeed;
+
             }
         }
 
         animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
         animator.SetBool("grounded", grounded);
+
+        
     }
+    public void StrikeFalse()
+    {
+        animator.SetBool("strike",false);
+    }
+}
 
 
 
 
   
-}
+
         
     

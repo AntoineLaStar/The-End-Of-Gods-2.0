@@ -8,6 +8,7 @@ public static class Player_Info {
     public static float defence = 0.0f;
     public static int degat = 10;
     public static float attackDelay = 1;
+    public static bool ableToHit = true;
 
 
     public static int CurrentHealth

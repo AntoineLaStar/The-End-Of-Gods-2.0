@@ -41,7 +41,7 @@ public class SpearClass : MonoBehaviour
                         podiumSpearChangeSprite();
 
                         Instantiate(knight_1);
-                        knight_1.transform.position = new Vector2(-2, -2);
+                        knight_1.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
 
                         destroyPlayer();
 
