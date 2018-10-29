@@ -15,7 +15,29 @@ public static class Player_Info {
         set { currentHealth = value; }
     }
 
-
+    public static void BuyHealth()
+    {
+        
+        startingHealth +=(Mathf.RoundToInt(startingHealth * 0.05f));
+    }
+    public static void BuyDefence()
+    {
+        int defToAdd = (Mathf.RoundToInt(defence * 0.05f));
+        if (defToAdd < 1)
+        {
+            defToAdd = 1;
+        }
+        defence += defToAdd;
+    }
+    public static void BuyDamage()
+    {
+        int dmgToAdd = (Mathf.RoundToInt(degat * 0.05f));
+        if (dmgToAdd < 1)
+        {
+            dmgToAdd = 1;
+        }
+        degat += dmgToAdd;
+    }
 
 
 }
