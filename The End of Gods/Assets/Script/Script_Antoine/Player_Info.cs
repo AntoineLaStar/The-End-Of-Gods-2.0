@@ -8,11 +8,18 @@ public static class Player_Info {
     public static float defence = 0.0f;
     public static int degat = 10;
     public static float attackDelay = 1;
+    public static GameObject characterName;
 
 
     public static int CurrentHealth
     {
         set { currentHealth = value; }
+    }
+
+    public static GameObject CharacterName
+    {
+        get { return characterName; }
+        set { characterName = value;  }
     }
 
     public static void BuyHealth()
@@ -37,6 +44,12 @@ public static class Player_Info {
             dmgToAdd = 1;
         }
         degat += dmgToAdd;
+    }
+
+    public static void setPlayerGameObject(GameObject thePlayer)
+    {
+        characterName = thePlayer;
+       
     }
 
 
