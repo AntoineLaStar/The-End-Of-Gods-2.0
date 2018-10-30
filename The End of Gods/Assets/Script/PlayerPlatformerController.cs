@@ -11,6 +11,9 @@ public class PlayerPlatformerController : PhysicsObject
     public bool ableToDash = true;
     float PlayerDashDelay = Player_Info.dashDelay;
     float timeForNextDash;
+    float PlayerInvisibleDelay = Player_Info.invisibilityDelay;
+    float timeForNextInvisiblity;
+    bool isShielded = false;
     bool isInvisible = false;
 
     private Animator animator;
@@ -26,15 +29,21 @@ public class PlayerPlatformerController : PhysicsObject
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
         timeForNextDash = PlayerDashDelay;
+        timeForNextInvisiblity = PlayerInvisibleDelay;
     }
 
     protected override void ComputeVelocity()
     {
         timeForNextDash -= Time.deltaTime;
+        timeForNextInvisiblity -= Time.deltaTime;
 
         if (timeForNextDash <= 0f)
         {
             Player_Info.ableToDash = true;
+        }
+        if (timeForNextInvisiblity <= 0f)
+        {
+            Player_Info.ableToInvisibility = true;
         }
 
         Vector2 move = Vector2.zero;
@@ -89,38 +98,28 @@ public class PlayerPlatformerController : PhysicsObject
 
                         if (gameObject.name == "knight_2")
                         {
-                                if (isInvisible)
+                                if (isShielded)
                                 {
-                                    isInvisible = false;
+                                    isShielded = false;
                                     increaseOpacity();
                                 }
                                 else
                                 {
                                     KeyImputManager.LockPlayerMouvement();
-                                    isInvisible = true;
+                                    isShielded = true;
                                     decreaseOpacity();
                                 }
                         }
 
                         if (gameObject.name == "knight_3")
                         {
-                            if (isInvisible)
+                            if (Player_Info.ableToInvisibility)
                             {
-                                isInvisible = false;
-                                increaseOpacity();
-                            }
-                            else
-                            {
-                                KeyImputManager.LockPlayerMouvement();
-                                isInvisible = true;
                                 decreaseOpacity();
-                                animator.Play("knight_2_Idle");
+                                Invoke("cancelInvisibility", Player_Info.invisibilityLenght);
                             }
                         }
-
                     }
-
-
 
                     if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Left"))
                     {
@@ -160,20 +159,18 @@ public class PlayerPlatformerController : PhysicsObject
             if (Input.GetKeyUp(vKey))
             {
                 keyPressed = vKey;
-                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Defence"))
+                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Defence") && gameObject.name == "knight_2")
                 {
                     isInvisible = false;
                     increaseOpacity();
                     unlockPlayerMovement();
                 }
 
+
             }
         }
 
     }
-
-
-
 
     public void unlockPlayerMovement()
     {
@@ -198,6 +195,13 @@ public class PlayerPlatformerController : PhysicsObject
             Player_Info.ableToDash = false;
         }
     }
+
+    public void cancelInvisibility()
+    {
+        timeForNextInvisiblity = PlayerInvisibleDelay;
+        increaseOpacity();
+    }
+
 
     public void decreaseOpacity()
     {

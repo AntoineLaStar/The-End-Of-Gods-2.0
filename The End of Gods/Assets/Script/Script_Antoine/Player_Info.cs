@@ -16,9 +16,9 @@ public static class Player_Info {
     public static float dashDelay = 1;
     public static bool ableToDash = true;
 
-    //public static float invisibilityLenght = 0.3f;
-    //public static float invisibilityDelay = 1;
-    //public static bool ableToInvisibility = true;
+    public static float invisibilityLenght = 2;
+    public static float invisibilityDelay = 3;
+    public static bool ableToInvisibility = true;
 
 
     public static int CurrentHealth
