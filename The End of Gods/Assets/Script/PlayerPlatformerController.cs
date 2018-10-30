@@ -28,6 +28,7 @@ public class PlayerPlatformerController : PhysicsObject
         foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
 
+           
             if (Input.GetKey(vKey))
             {
                 keyPressed = vKey;
@@ -90,10 +91,11 @@ public class PlayerPlatformerController : PhysicsObject
                     {
                         if(grounded == true)
                         {
-                            //animator.Play("knight_2_Attack");
-                            //animator.Play("knight_1_Attack");
-                            //animator.Play("knight_3_Attack");
-                            Invoke("StrikeFalse", 1);
+                            sound.PlaySound("Swoosh");
+                            animator.Play("knight_2_Attack");
+                            animator.Play("knight_1_Attack");
+                            animator.Play("knight_3_Attack");
+                            //Invoke("StrikeFalse", 1);
                         }
                        
                          
@@ -113,10 +115,10 @@ public class PlayerPlatformerController : PhysicsObject
 
         
     }
-    public void StrikeFalse()
-    {
-        animator.SetBool("strike",false);
-    }
+   // public void StrikeFalse()
+    //{
+   //     animator.SetBool("strike",false);
+    //}
 }
 
 

@@ -11326,7 +11326,7 @@ Prefab:
         type: 2}
       propertyPath: knight_3
       value: 
-      objectReference: {fileID: 1677251416917656, guid: fc14db40add8d4c43847dc9c7af38ca6,
+      objectReference: {fileID: 1191177942775744, guid: fc14db40add8d4c43847dc9c7af38ca6,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
@@ -11374,7 +11374,7 @@ Prefab:
         type: 2}
       propertyPath: knight_2
       value: 
-      objectReference: {fileID: 1742878810857588, guid: a0a890492d95df347a5a70e511ccdab4,
+      objectReference: {fileID: 1062841184554348, guid: a0a890492d95df347a5a70e511ccdab4,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32d0f60c03f97c64e9b9e1319f4201a8, type: 2}

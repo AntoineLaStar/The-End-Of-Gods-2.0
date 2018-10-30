@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class sound : MonoBehaviour
 {
-    KeyCode keyPressed = KeyCode.None;
-    AudioSource sourceAudio;
+    public static KeyCode keyPressed = KeyCode.None;
+    static AudioSource sourceAudio;
+    public static AudioClip Swoosh;
     // Use this for initialization
     void Start()
     {
+        Swoosh = Resources.Load<AudioClip>("Swoosh");
+        sourceAudio = GetComponent<AudioSource>();
+
+      
        
     }
 
@@ -17,26 +22,24 @@ public class sound : MonoBehaviour
     {
     }
 
-
-
-    public void FrapperSound()
+    public static void PlaySound(string clip)
     {
+        //sourceAudio.PlayOneShot(Swoosh);
         foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
+
 
             if (Input.GetKey(vKey))
             {
                 keyPressed = vKey;
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
                 {
-                    sourceAudio = GetComponent<AudioSource>();
                     sourceAudio.Play();
-                    sourceAudio.volume = 5f;
                 }
-
             }
         }
     }
+
 }
    
 
