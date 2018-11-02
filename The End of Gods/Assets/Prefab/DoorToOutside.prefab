@@ -9,116 +9,124 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1165427989384510}
+  m_RootGameObject: {fileID: 1756716100370294}
   m_IsPrefabAsset: 1
---- !u!1 &1165427989384510
+--- !u!1 &1756716100370294
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4544506591863834}
-  - component: {fileID: 212829487533038348}
-  - component: {fileID: 114692731527101850}
-  - component: {fileID: 61895655024895484}
-  - component: {fileID: 114235320849337264}
-  - component: {fileID: 114081335689089424}
+  - component: {fileID: 4393423138589992}
   m_Layer: 0
-  m_Name: Spear_Podium
-  m_TagString: Podium_Spear
+  m_Name: DoorToOutside
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4544506591863834
+--- !u!1 &1830601212910074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4364726328058530}
+  - component: {fileID: 212438158599624508}
+  - component: {fileID: 114084411179093144}
+  - component: {fileID: 114708718166551338}
+  - component: {fileID: 61374310348976918}
+  m_Layer: 0
+  m_Name: DoorSprite
+  m_TagString: OutsideDoor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4364726328058530
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1165427989384510}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.48, y: -0.79, z: 0}
-  m_LocalScale: {x: 2.973515, y: 3.507335, z: 1}
+  m_GameObject: {fileID: 1830601212910074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.31, y: -1.3, z: 0}
+  m_LocalScale: {x: 4.836987, y: 5.077645, z: 1}
   m_Children: []
+  m_Father: {fileID: 4393423138589992}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4393423138589992
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1756716100370294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 19.583166, y: 3.5035164, z: 0.02734375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4364726328058530}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61895655024895484
+--- !u!61 &61374310348976918
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1165427989384510}
+  m_GameObject: {fileID: 1830601212910074}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.011861235, y: -0.25987887}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 1.4}
-    newSize: {x: 0.8, y: 1.4}
+    oldSize: {x: 1.27, y: 1.29}
+    newSize: {x: 1.27, y: 1.29}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 1.4}
+  m_Size: {x: 0.41598964, y: 0.7702422}
   m_EdgeRadius: 0
---- !u!114 &114081335689089424
+--- !u!114 &114084411179093144
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1165427989384510}
+  m_GameObject: {fileID: 1830601212910074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6668fa1abe6eafb449f076d9806b7308, type: 3}
+  m_Script: {fileID: 11500000, guid: e2b08dc56d657894f8b62cd1a79c5663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PodiumSprite: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
-  PodiumSpriteSpear: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}
-  Character: {fileID: 1847118155045216, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
---- !u!114 &114235320849337264
+  linkScene: Scenes/OutsideCastle
+--- !u!114 &114708718166551338
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1165427989384510}
+  m_GameObject: {fileID: 1830601212910074}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54fcbae9050f01e479d313acf4cb4743, type: 3}
+  m_Script: {fileID: 11500000, guid: 952d021d69e6f2a4f962f385b8ce8743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knight_1: {fileID: 1847118155045216, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
-  PodiumSprite: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
-  PodiumSpriteSpear: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}
-  PodiumSpriteSword: {fileID: 21300000, guid: e4545947d344ec144a3d62dd188f9dd5, type: 3}
-  PodiumSpriteAxe: {fileID: 21300000, guid: 252e7715d1685b94d92fc2d8d536fe81, type: 3}
---- !u!114 &114692731527101850
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1165427989384510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6d2df51f14326640a4fb076770965b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: 1
-  floatStrength: 0.2
-  floatSpeed: 2
---- !u!212 &212829487533038348
+  tagDoor: OutsideDoor
+--- !u!212 &212438158599624508
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1165427989384510}
+  m_GameObject: {fileID: 1830601212910074}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -145,15 +153,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 443016463
-  m_SortingLayer: 3
+  m_SortingLayerID: -40022607
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f7c10934d5fbed4f816032e6a87c2ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8, y: 1.4}
+  m_Size: {x: 1.27, y: 1.29}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -23,6 +23,14 @@ TagManager:
   - Podium_Spear
   - Podium_Sword
   - Podium_Axe
+  - TpDoor
+  - MarchantDoor
+  - tpMauve
+  - tpBlack
+  - errorMessage
+  - tpBleu
+  - trap
+  - OutsideDoor
   layers:
   - Default
   - TransparentFX

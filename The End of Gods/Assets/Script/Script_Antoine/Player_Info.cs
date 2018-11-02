@@ -11,6 +11,8 @@ public static class Player_Info {
     public static float attackDelay = 1;
     public static bool ableToHit = true;
 
+    public static GameObject character;
+    public static string characterName; 
     public static int dashForce = 15;
     public static float dashLenght = 0.3f;
     public static float dashDelay = 1;
@@ -20,13 +22,53 @@ public static class Player_Info {
     public static float invisibilityDelay = 3;
     public static bool ableToInvisibility = true;
 
-
     public static int CurrentHealth
     {
         set { currentHealth = value; }
     }
 
+    public static GameObject Character
+    {
+        get { return character; }
+        set { character = value;  }
+    }
 
+
+    public static string CharacterName
+    {
+        get { return characterName; }
+        set { characterName = value; }
+    }
+
+    public static void BuyHealth()
+    {
+        
+        startingHealth +=(Mathf.RoundToInt(startingHealth * 0.05f));
+    }
+    public static void BuyDefence()
+    {
+        int defToAdd = (Mathf.RoundToInt(defence * 0.05f));
+        if (defToAdd < 1)
+        {
+            defToAdd = 1;
+        }
+        defence += defToAdd;
+    }
+    public static void BuyDamage()
+    {
+        int dmgToAdd = (Mathf.RoundToInt(degat * 0.05f));
+        if (dmgToAdd < 1)
+        {
+            dmgToAdd = 1;
+        }
+        degat += dmgToAdd;
+    }
+
+    public static void setPlayerGameObject(GameObject thePlayer)
+    {
+        character = thePlayer;
+       
+    }
 
 
 }
