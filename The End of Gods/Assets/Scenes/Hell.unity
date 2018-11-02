@@ -322,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PodiumSprite: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
   PodiumSpriteWeapon: {fileID: 21300000, guid: e4545947d344ec144a3d62dd188f9dd5, type: 3}
-  Character: {fileID: 1788344994719820, guid: fc14db40add8d4c43847dc9c7af38ca6, type: 2}
+  Character: {fileID: 1543223084530108, guid: fc14db40add8d4c43847dc9c7af38ca6, type: 2}
 --- !u!1001 &1433676715
 Prefab:
   m_ObjectHideFlags: 0
@@ -19269,7 +19269,7 @@ Prefab:
         type: 2}
       propertyPath: knight_3
       value: 
-      objectReference: {fileID: 1788344994719820, guid: fc14db40add8d4c43847dc9c7af38ca6,
+      objectReference: {fileID: 1543223084530108, guid: fc14db40add8d4c43847dc9c7af38ca6,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
