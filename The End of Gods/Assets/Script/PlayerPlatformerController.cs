@@ -98,7 +98,12 @@ public class PlayerPlatformerController : PhysicsObject
 
                         if (gameObject.name == "knight_3")
                         {
-                            knight3Action();
+                            if (Player_Info.ableToInvisibility)
+                            {
+                                Player_Info.ableToInvisibility = false;
+                                decreaseOpacity();
+                                Invoke("cancelInvisibility", Player_Info.invisibilityLenght);
+                            }
                         }
                     }
 

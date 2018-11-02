@@ -7,7 +7,7 @@ public class CollisonWithEnnemi : MonoBehaviour {
     KeyCode keyPressed = KeyCode.None;
     GameObject player;
     float PlayerAttackDelay = Player_Info.attackDelay;
-    float timeForNextAttack;
+     float timeForNextAttack;
 
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -22,7 +22,6 @@ public class CollisonWithEnnemi : MonoBehaviour {
             Player_Info.ableToHit = true;
         }
 
-
         foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
             if (Input.GetKey(vKey))
@@ -31,8 +30,6 @@ public class CollisonWithEnnemi : MonoBehaviour {
 
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
                 {
-
-
                     gameObject.GetComponent<Collider2D>().enabled = true;
                     Invoke("enableColliderWeapon", 0.1f);
                 }
