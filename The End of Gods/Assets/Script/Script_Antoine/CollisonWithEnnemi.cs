@@ -26,7 +26,6 @@ public class CollisonWithEnnemi : MonoBehaviour
             Player_Info.ableToHit = true;
         }
 
-
         foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
             if (Input.GetKey(vKey))

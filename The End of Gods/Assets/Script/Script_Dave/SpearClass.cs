@@ -42,8 +42,10 @@ public class SpearClass : MonoBehaviour
 
                         Instantiate(knight_1);
                         knight_1.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
-
+                        Player_Info.setPlayerGameObject(knight_1);
+                        Player_Info.CharacterName = knight_1.name;
                         destroyPlayer();
+                        
 
                     }
                 }

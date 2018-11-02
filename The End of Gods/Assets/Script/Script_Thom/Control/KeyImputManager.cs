@@ -41,6 +41,7 @@ public static class KeyImputManager
     {
         if (!isInitialize){
  InitializeDictionary();
+            freePlayerMouvement();
         }
        
     }

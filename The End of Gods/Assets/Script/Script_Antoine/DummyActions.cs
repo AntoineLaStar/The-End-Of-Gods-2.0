@@ -17,17 +17,12 @@ public class DummyActions : MonoBehaviour {
 
     }
 
-
-
-
     public void DealDamage(int amount)
     {
         Dummy_Info.CurrentHealth -= amount;
         triggerHitSplat(amount);
         isAttacked = true;
         triggerHurtAnimation();
-
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)

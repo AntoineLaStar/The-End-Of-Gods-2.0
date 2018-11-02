@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class ShopControl : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public void buyHealth()
+    {
+        Player_Info.BuyHealth();
+        print(Player_Info.startingHealth);
+    }
+    public void buyDefence()
+    {
+        Player_Info.BuyDefence();
+        print(Player_Info.defence);
+    }
+    public void buyDegat()
+    {
+        Player_Info.BuyDamage();
+        print(Player_Info.degat);
+    }
 }
