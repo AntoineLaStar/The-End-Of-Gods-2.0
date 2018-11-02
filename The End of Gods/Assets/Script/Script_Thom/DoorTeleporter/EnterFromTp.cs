@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,13 +13,22 @@ public class EnterFromTp : MonoBehaviour {
             {
             GameObject player = GameObject.FindWithTag("Player");    
             player.transform.position = new Vector3(GameObject.FindGameObjectWithTag(tagTp).transform.position.x, GameObject.FindGameObjectWithTag(tagTp).transform.position.y - 1.25f,0);
+             changePlayerType();
             EnterTeleporter.setTeleportHasBeenUsed();
             }
             
         }
 	}
-	
-	void Update () {
-		
-	}
+
+    private void changePlayerType()
+    {
+
+        GameObject OldPlayer = GameObject.FindGameObjectWithTag("Player");
+        GameObject goodPlayer = Instantiate(Player_Info.Character);
+        goodPlayer.transform.position = OldPlayer.transform.position;
+
+        Destroy(OldPlayer);
+    }
+
+ 
 }

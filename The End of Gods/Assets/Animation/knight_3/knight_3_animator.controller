@@ -213,6 +213,27 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1101 &1101704929115168112
+AnimatorStateTransition:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_Conditions: []
+  m_DstStateMachine: {fileID: 0}
+  m_DstState: {fileID: 1102768949285594954}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
 --- !u!1101 &1101711564171395850
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -403,13 +424,13 @@ AnimatorState:
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102688997978141400
+--- !u!1102 &1102768949285594954
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: knight_3_Die
+  m_Name: knight_1_Die
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -476,16 +497,17 @@ AnimatorStateMachine:
     m_State: {fileID: 1102278807924284542}
     m_Position: {x: 312, y: 816, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102688997978141400}
-    m_Position: {x: 36, y: -228, z: 0}
-  - serializedVersion: 1
     m_State: {fileID: 1102620819152213696}
     m_Position: {x: 312, y: 120, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 1102768949285594954}
+    m_Position: {x: -188.9176, y: 498.0163, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 1101148925544673024}
   - {fileID: 1101071130350068828}
   - {fileID: 1101711564171395850}
+  - {fileID: 1101704929115168112}
   m_EntryTransitions:
   - {fileID: 1109164547285974184}
   m_StateMachineTransitions: {}
