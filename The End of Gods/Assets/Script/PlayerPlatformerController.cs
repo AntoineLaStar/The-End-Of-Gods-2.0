@@ -30,13 +30,15 @@ public class PlayerPlatformerController : PhysicsObject
         rigidbody = GetComponent<Rigidbody2D>();
         timeForNextDash = PlayerDashDelay;
         timeForNextInvisiblity = PlayerInvisibleDelay;
+       
     }
 
     protected override void ComputeVelocity()
     {
+        
         timeForNextDash -= Time.deltaTime;
         timeForNextInvisiblity -= Time.deltaTime;
-
+  
         if (timeForNextDash <= 0f)
         {
             Player_Info.ableToDash = true;
@@ -86,38 +88,17 @@ public class PlayerPlatformerController : PhysicsObject
                     {
                         if (gameObject.name == "knight_1")
                         {
-                            if (Player_Info.ableToDash == true)
-                            {
-                                playerDash();
-                                KeyImputManager.LockPlayerMouvement();
-                                Invoke("unlockPlayerMovement", Player_Info.dashLenght);
-                                Player_Info.ableToDash = false;
-                                timeForNextDash = PlayerDashDelay;
-                            }
+                            knight1Action();
                         }
 
                         if (gameObject.name == "knight_2")
                         {
-                                if (isShielded)
-                                {
-                                    isShielded = false;
-                                    increaseOpacity();
-                                }
-                                else
-                                {
-                                    KeyImputManager.LockPlayerMouvement();
-                                    isShielded = true;
-                                    decreaseOpacity();
-                                }
+                            knight2Action();
                         }
 
                         if (gameObject.name == "knight_3")
                         {
-                            if (Player_Info.ableToInvisibility)
-                            {
-                                decreaseOpacity();
-                                Invoke("cancelInvisibility", Player_Info.invisibilityLenght);
-                            }
+                            knight3Action();
                         }
                     }
 
@@ -148,12 +129,59 @@ public class PlayerPlatformerController : PhysicsObject
                     targetVelocity = move * maxSpeed;
                 }
             }
-       
-        animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
-        animator.SetBool("grounded", grounded);
+            animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
+            animator.SetBool("grounded", grounded);
         }
 
+        checkIfDefenceIsReleased();
 
+    }
+
+    public void knight1Action()
+    {
+        if (Player_Info.ableToDash == true)
+        {
+            playerDash();
+            KeyImputManager.LockPlayerMouvement();
+            Invoke("unlockPlayerMovement", Player_Info.dashLenght);
+            Player_Info.ableToDash = false;
+            timeForNextDash = PlayerDashDelay;
+        }
+    }
+
+    public void knight2Action()
+    {
+        if (isShielded)
+        {
+            isShielded = false;
+            increaseOpacity();
+        }
+        else
+        {
+            cancelCurrentPlayerAction();
+            KeyImputManager.LockPlayerMouvement();
+            isShielded = true;
+            decreaseOpacity();
+        }
+    }
+
+    public void cancelCurrentPlayerAction()
+    {
+        grounded = true;
+        velocity.x = 0;
+    }
+
+    public void knight3Action()
+    {
+        if (Player_Info.ableToInvisibility)
+        {
+            decreaseOpacity();
+            Invoke("cancelInvisibility", Player_Info.invisibilityLenght);
+        }
+    }
+
+    public void checkIfDefenceIsReleased()
+    {
         foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
             if (Input.GetKeyUp(vKey))
@@ -165,11 +193,8 @@ public class PlayerPlatformerController : PhysicsObject
                     increaseOpacity();
                     unlockPlayerMovement();
                 }
-
-
             }
         }
-
     }
 
     public void unlockPlayerMovement()
