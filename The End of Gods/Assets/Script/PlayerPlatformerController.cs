@@ -144,6 +144,7 @@ public class PlayerPlatformerController : PhysicsObject
                         
                         if(grounded == true)
                         {
+                                print("gfrhd");
                             sound.PlaySound("Swoosh");
                             animator.Play("knight_Attack");
                             Player_Info.ableToHit = false;
@@ -171,7 +172,7 @@ public class PlayerPlatformerController : PhysicsObject
     //{
    //     animator.SetBool("strike",false);
     //}
-        }
+        
 
         checkIfDefenceIsReleased();
 
@@ -206,7 +207,7 @@ public class PlayerPlatformerController : PhysicsObject
     }
 
     public void cancelCurrentPlayerAction()
-    {Player_Info
+    {
         grounded = true;
         velocity.x = 0;
     }
@@ -276,6 +277,8 @@ public class PlayerPlatformerController : PhysicsObject
     public void increaseOpacity()
     {
         gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+    }
+
     }
 
 
