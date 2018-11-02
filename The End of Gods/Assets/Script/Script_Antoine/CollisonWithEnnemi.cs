@@ -2,25 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollisonWithEnnemi : MonoBehaviour {
+public class CollisonWithEnnemi : MonoBehaviour
+{
 
     KeyCode keyPressed = KeyCode.None;
     GameObject player;
   
     float PlayerAttackDelay = Player_Info.attackDelay;
-    float timeForNextAttack;
+   
     bool attack;
 
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
-        timeForNextAttack = PlayerAttackDelay;
+        Player_Info.timeForNextAttack = PlayerAttackDelay;
         
     }
 	
 	void Update () {
-        timeForNextAttack -= Time.deltaTime;
+        Player_Info.timeForNextAttack -= Time.deltaTime;
 
-        if (timeForNextAttack <= 0f)
+        if (Player_Info.timeForNextAttack <= 0f)
         {
             Player_Info.ableToHit = true;
         }
@@ -54,7 +55,7 @@ public class CollisonWithEnnemi : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Dummy" && Player_Info.ableToHit == true)
         {
-            timeForNextAttack = Player_Info.attackDelay;
+            Player_Info.timeForNextAttack = Player_Info.attackDelay;
             Player_Info.ableToHit = false;
             collision.gameObject.GetComponent<DummyActions>().DealDamage(Player_Info.degat);
         }

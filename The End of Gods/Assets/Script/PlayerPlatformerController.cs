@@ -89,12 +89,13 @@ public class PlayerPlatformerController : PhysicsObject
                    
                     if (Player_Info.ableToHit == true)
                     {
+                        
                         if(grounded == true)
                         {
                             sound.PlaySound("Swoosh");
-                            animator.Play("knight_2_Attack");
-                            animator.Play("knight_1_Attack");
-                            animator.Play("knight_3_Attack");
+                            animator.Play("knight_Attack");
+                            Player_Info.ableToHit = false;
+                            Player_Info.timeForNextAttack = Player_Info.attackDelay;
                             //Invoke("StrikeFalse", 1);
                         }
                        
