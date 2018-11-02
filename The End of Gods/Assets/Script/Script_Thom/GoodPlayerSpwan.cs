@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class GoodPlayerSpwan : MonoBehaviour {
 
-	// Use this for initialization
+    [SerializeField] GameObject knight_base;
 	void Start () {
 
-      GameObject OldPlayer =  GameObject.FindGameObjectWithTag("Player");
-       GameObject goodPlayer = Instantiate(Player_Info.CharacterName);
-        goodPlayer.transform.position = OldPlayer.transform.position;
-
-        Destroy(OldPlayer);
+      if(Player_Info.characterName == "knight_base")
+        {
+            Player_Info.Character = knight_base;
+        }
 
     }
 	

@@ -19,6 +19,7 @@ public class KillPlayer : MonoBehaviour {
     {
         Animator playerAnimator = gameObject.GetComponent<Animator>();
         playerAnimator.Play("knight_1_Die");
+        Player_Info.CharacterName = "knight_base";
         Invoke("TeleportPlayer", 1f);
     }
     private void TeleportPlayer()

@@ -39,6 +39,7 @@ public class SwordClass : MonoBehaviour {
                         Instantiate(knight_3);
                         knight_3.transform.position = new Vector2(1, -2);
                         Player_Info.setPlayerGameObject(knight_3);
+                        Player_Info.CharacterName = knight_3.name;
                         destroyPlayer();
                         
                     }

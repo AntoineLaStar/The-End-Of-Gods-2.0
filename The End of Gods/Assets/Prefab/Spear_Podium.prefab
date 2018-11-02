@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114692731527101850}
   - component: {fileID: 61895655024895484}
   - component: {fileID: 114235320849337264}
+  - component: {fileID: 114081335689089424}
   m_Layer: 0
   m_Name: Spear_Podium
   m_TagString: Podium_Spear
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1165427989384510}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: -1.2, z: 0}
+  m_LocalPosition: {x: -3.48, y: -0.79, z: 0}
   m_LocalScale: {x: 2.973515, y: 3.507335, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -68,6 +69,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.4}
   m_EdgeRadius: 0
+--- !u!114 &114081335689089424
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1165427989384510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6668fa1abe6eafb449f076d9806b7308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PodiumSprite: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
+  PodiumSpriteSpear: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}
+  Character: {fileID: 1847118155045216, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
 --- !u!114 &114235320849337264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -79,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fcbae9050f01e479d313acf4cb4743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knight_1: {fileID: 1208498228520986, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
+  knight_1: {fileID: 1847118155045216, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
   PodiumSprite: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
   PodiumSpriteSpear: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}
   PodiumSpriteSword: {fileID: 21300000, guid: e4545947d344ec144a3d62dd188f9dd5, type: 3}
@@ -131,7 +146,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 443016463
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

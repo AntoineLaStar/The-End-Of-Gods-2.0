@@ -45,6 +45,7 @@ public class AxeClass : MonoBehaviour {
                         Instantiate(knight_2);
                         knight_2.transform.position = new Vector2(4, -2);
                         Player_Info.setPlayerGameObject(knight_2);
+                        Player_Info.CharacterName = knight_2.name;
                         destroyPlayer();
                         
 
