@@ -26,6 +26,7 @@ public class EnterFromTp : MonoBehaviour {
         GameObject OldPlayer = GameObject.FindGameObjectWithTag("Player");
         GameObject goodPlayer = Instantiate(Player_Info.Character);
         goodPlayer.transform.position = OldPlayer.transform.position;
+        HitTracker.HaveHit = false;
 
         Destroy(OldPlayer);
     }

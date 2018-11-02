@@ -299,6 +299,7 @@ MonoBehaviour:
   maxSpeed: 7
   jumpTakeOffSpeed: 12
   isAttacking: 0
+  ableToDash: 1
 --- !u!114 &114602921070879694
 MonoBehaviour:
   m_ObjectHideFlags: 1

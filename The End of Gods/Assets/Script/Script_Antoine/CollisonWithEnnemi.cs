@@ -34,9 +34,8 @@ public class CollisonWithEnnemi : MonoBehaviour
 
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
                 {
-                  
                     gameObject.GetComponent<Collider2D>().enabled = true;
-                    Invoke("enableColliderWeapon", 0.1f);
+                    Invoke("enableColliderWeapon", 0.5f);
                    
                 }
 

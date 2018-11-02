@@ -40,6 +40,11 @@ public static class Player_Info {
         set { characterName = value; }
     }
 
+    public static int Degat
+    {
+        get { return degat; }
+    }
+
     public static void BuyHealth()
     {
         

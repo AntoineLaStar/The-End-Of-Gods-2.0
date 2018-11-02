@@ -92,7 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0c6e792595344fac603ff18ec7a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knight_2: {fileID: 1062841184554348, guid: a0a890492d95df347a5a70e511ccdab4, type: 2}
+  knight_2: {fileID: 1994144919391126, guid: a0a890492d95df347a5a70e511ccdab4, type: 2}
   PodiumSprite: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
   PodiumSpriteAxe: {fileID: 21300000, guid: 252e7715d1685b94d92fc2d8d536fe81, type: 3}
   PodiumSpriteSpear: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}

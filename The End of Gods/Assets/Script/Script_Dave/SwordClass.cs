@@ -40,6 +40,7 @@ public class SwordClass : MonoBehaviour {
                         knight_3.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
                         Player_Info.setPlayerGameObject(knight_3);
                         Player_Info.CharacterName = knight_3.name;
+                        HitTracker.HaveHit = false;
                         destroyPlayer();
                         
                     }

@@ -88,17 +88,18 @@ public class PlayerPlatformerController : PhysicsObject
 
                     if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Defence"))
                     {
-                        if (gameObject.name == "knight_1")
+                       
+                        if (gameObject.name.Contains("knight_1"))
                         {
                             knight1Action();
                         }
 
-                        if (gameObject.name == "knight_2")
+                        if (gameObject.name.Contains("knight_2"))
                         {
                             knight2Action();
                         }
 
-                        if (gameObject.name == "knight_3")
+                        if (gameObject.name.Contains("knight_3"))
                         {
                             if (Player_Info.ableToInvisibility)
                             {
@@ -139,18 +140,19 @@ public class PlayerPlatformerController : PhysicsObject
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
                 {
                    
-                    if (Player_Info.ableToHit == true)
+                    if (HitTracker.HaveHit == false)
                     {
-                        
-                        if(grounded == true)
-                        {
-                                print("gfrhd");
                             sound.PlaySound("Swoosh");
-                            animator.Play("knight_Attack");
-                            Player_Info.ableToHit = false;
-                            Player_Info.timeForNextAttack = Player_Info.attackDelay;
-                            //Invoke("StrikeFalse", 1);
-                        }
+                          if (grounded == true)
+                       {
+
+                                HitTracker.HaveHit = true;
+                                Invoke("delockAttack", Player_Info.attackDelay);
+                                animator.Play("knight_Attack");
+                                
+                            
+
+                            }
                        
                          
                     }
@@ -167,16 +169,18 @@ public class PlayerPlatformerController : PhysicsObject
             animator.SetBool("grounded", grounded);
 
         
-    }
-   // public void StrikeFalse()
-    //{
-   //     animator.SetBool("strike",false);
-    //}
+        }
+
         
 
         checkIfDefenceIsReleased();
 
     }
+    public void delockAttack()
+    {
+        HitTracker.HaveHit = false;
+    }
+
 
     public void knight1Action()
     {
@@ -228,7 +232,7 @@ public class PlayerPlatformerController : PhysicsObject
             if (Input.GetKeyUp(vKey))
             {
                 keyPressed = vKey;
-                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Defence") && gameObject.name == "knight_2")
+                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Defence") && gameObject.name.Contains("knight_2"))
                 {
                     isInvisible = false;
                     increaseOpacity();

@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54fcbae9050f01e479d313acf4cb4743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knight_1: {fileID: 1469078972975090, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
+  knight_1: {fileID: 1735714996753652, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
   PodiumSprite: {fileID: 21300000, guid: 6004f0ca17384ee478087f640d68e674, type: 3}
   PodiumSpriteSpear: {fileID: 21300000, guid: f1f89eb8e21d7f6469ffc0fce3ff0924, type: 3}
   PodiumSpriteSword: {fileID: 21300000, guid: e4545947d344ec144a3d62dd188f9dd5, type: 3}

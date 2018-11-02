@@ -10,6 +10,7 @@ public class KillPlayer : MonoBehaviour {
     {
         if(other.tag == "trap")
         {
+          
             killPlayer();
        
         }

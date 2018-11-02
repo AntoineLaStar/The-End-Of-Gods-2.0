@@ -152,7 +152,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114138379344405630, guid: f979650f698ef4948ad560134891c76d, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: f979650f698ef4948ad560134891c76d, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &293083539
@@ -11293,12 +11294,6 @@ Prefab:
       propertyPath: messageCanvas
       value: 
       objectReference: {fileID: 2000286403}
-    - target: {fileID: 114317437131566184, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30,
-        type: 2}
-      propertyPath: knight_3
-      value: 
-      objectReference: {fileID: 1396323687167954, guid: fc14db40add8d4c43847dc9c7af38ca6,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b24c7c7d0e8c83544aa5ecd56bcc2f30, type: 2}
   m_IsPrefabAsset: 0
@@ -11346,12 +11341,6 @@ Prefab:
       propertyPath: messageCanvas
       value: 
       objectReference: {fileID: 2000286403}
-    - target: {fileID: 114599634732601794, guid: 32d0f60c03f97c64e9b9e1319f4201a8,
-        type: 2}
-      propertyPath: knight_2
-      value: 
-      objectReference: {fileID: 1994144919391126, guid: a0a890492d95df347a5a70e511ccdab4,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32d0f60c03f97c64e9b9e1319f4201a8, type: 2}
   m_IsPrefabAsset: 0
@@ -11451,12 +11440,6 @@ Prefab:
       propertyPath: messageCanvas
       value: 
       objectReference: {fileID: 2000286403}
-    - target: {fileID: 114763161071242994, guid: 95077e27dabb705408f613693dd647fa,
-        type: 2}
-      propertyPath: knight_1
-      value: 
-      objectReference: {fileID: 1735714996753652, guid: 18097bfeae2cb9744a83c6860ec9f34a,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95077e27dabb705408f613693dd647fa, type: 2}
   m_IsPrefabAsset: 0
