@@ -10,7 +10,7 @@ public static class Player_Info {
 
     public static float attackDelay = 1;
     public static bool ableToHit = true;
-
+    public static float timeForNextAttack = 0.0f;
     public static GameObject character;
     public static string characterName; 
     public static int dashForce = 15;

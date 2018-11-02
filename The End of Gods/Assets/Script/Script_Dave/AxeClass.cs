@@ -43,7 +43,7 @@ public class AxeClass : MonoBehaviour {
                         podiumReset();
                         podiumSpearChangeSprite();                
                         Instantiate(knight_2);
-                        knight_2.transform.position = new Vector2(4, -2);
+                        knight_2.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
                         Player_Info.setPlayerGameObject(knight_2);
                         Player_Info.CharacterName = knight_2.name;
                         destroyPlayer();

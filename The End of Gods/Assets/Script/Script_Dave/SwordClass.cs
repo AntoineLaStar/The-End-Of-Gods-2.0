@@ -37,7 +37,7 @@ public class SwordClass : MonoBehaviour {
                         podiumReset();
                         podiumSwordChangeSprite();
                         Instantiate(knight_3);
-                        knight_3.transform.position = new Vector2(1, -2);
+                        knight_3.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
                         Player_Info.setPlayerGameObject(knight_3);
                         Player_Info.CharacterName = knight_3.name;
                         destroyPlayer();

@@ -16,6 +16,7 @@ public class PlayerPlatformerController : PhysicsObject
     bool isShielded = false;
     bool isInvisible = false;
 
+
     private Animator animator;
     private SpriteRenderer sprite;
     private Rigidbody2D rigidbody;
@@ -56,6 +57,7 @@ public class PlayerPlatformerController : PhysicsObject
             foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
             {
 
+           
                 if (Input.GetKey(vKey))
                 {
                     keyPressed = vKey;
@@ -131,12 +133,46 @@ public class PlayerPlatformerController : PhysicsObject
                         isGauche = false;
                     }
 
+                
+
+
+                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
+                {
+                   
+                    if (Player_Info.ableToHit == true)
+                    {
+                        
+                        if(grounded == true)
+                        {
+                                print("gfrhd");
+                            sound.PlaySound("Swoosh");
+                            animator.Play("knight_Attack");
+                            Player_Info.ableToHit = false;
+                            Player_Info.timeForNextAttack = Player_Info.attackDelay;
+                            //Invoke("StrikeFalse", 1);
+                        }
+                       
+                         
+                    }
+                    
+
+                   
+                }
+
                     targetVelocity = move * maxSpeed;
+
                 }
             }
             animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
             animator.SetBool("grounded", grounded);
-        }
+
+        
+    }
+   // public void StrikeFalse()
+    //{
+   //     animator.SetBool("strike",false);
+    //}
+        
 
         checkIfDefenceIsReleased();
 
@@ -243,10 +279,12 @@ public class PlayerPlatformerController : PhysicsObject
         gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
     }
 
+    }
 
 
 
 
-}
+
+
         
     
