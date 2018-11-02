@@ -9,10 +9,9 @@ public static class Player_Info {
     public static int degat = 10;
 
     public static float attackDelay = 1;
+<<<<<<< HEAD
     public static bool ableToHit = true;
 
-    public static GameObject character;
-    public static string characterName; 
     public static int dashForce = 15;
     public static float dashLenght = 0.3f;
     public static float dashDelay = 1;
@@ -21,6 +20,11 @@ public static class Player_Info {
     public static float invisibilityLenght = 2;
     public static float invisibilityDelay = 3;
     public static bool ableToInvisibility = true;
+
+=======
+    public static GameObject character;
+    public static string characterName; 
+>>>>>>> master
 
     public static int CurrentHealth
     {
