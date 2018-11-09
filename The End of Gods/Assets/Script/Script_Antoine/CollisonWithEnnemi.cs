@@ -57,7 +57,13 @@ public class CollisonWithEnnemi : MonoBehaviour
             Player_Info.ableToHit = false;
             collision.gameObject.GetComponent<DummyActions>().DealDamage(Player_Info.degat);
         }
-        
+
+        Attackable objetAttackable = collision.gameObject.GetComponent<Attackable>();
+        if (objetAttackable != null)
+        {
+            objetAttackable.DealDamage(Player_Info.degat);
+        }
+
     }
 
     

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public static class Player_Info {
     public static int startingHealth = 100;
     public static int currentHealth ;
     public static float defence = 0.0f;
     public static int degat = 10;
+    public static int money = 500;
 
     public static float attackDelay = 1;
     public static bool ableToHit = true;
@@ -75,5 +77,15 @@ public static class Player_Info {
        
     }
 
+    public static void addMoney(int amount)
+    {
+        money += amount;
+        afficherMoney();
+    }
+
+    public static void afficherMoney()
+    {
+        GameObject.FindGameObjectWithTag("coin").GetComponent<Text>().text = Player_Info.money.ToString();
+    }
 
 }
