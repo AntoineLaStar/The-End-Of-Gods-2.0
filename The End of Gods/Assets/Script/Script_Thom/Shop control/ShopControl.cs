@@ -9,7 +9,8 @@ public class ShopControl : MonoBehaviour {
     [SerializeField] Text defenceText;
     [SerializeField] Text attackText;
     [SerializeField] Text playerMoneytext;
-    private string errorMessage = "You don't have enought money";
+    [SerializeField] AudioSource CoinSound;
+    private string errorMessage = "You don't have the money for it";
 
     public void Start()
     {
@@ -29,6 +30,7 @@ public class ShopControl : MonoBehaviour {
             ShopInfo.incrementHealth();
             updateHealthPrice();
             updatePlayerMoney();
+            playCoinAudio();
         }
         else
         {
@@ -47,6 +49,7 @@ public class ShopControl : MonoBehaviour {
             ShopInfo.incrementDefence();
             updateDefencePrice();
             updatePlayerMoney();
+            playCoinAudio();
         }
         else
         {
@@ -65,6 +68,7 @@ public class ShopControl : MonoBehaviour {
             ShopInfo.incrementAttack();
             updateAttackPrice();
             updatePlayerMoney();
+            playCoinAudio();
         }
         else
         {
@@ -106,5 +110,10 @@ public class ShopControl : MonoBehaviour {
     private void updatePlayerMoney()
     {
         playerMoneytext.text = Player_Info.Money.ToString();
+    }
+
+    private void playCoinAudio()
+    {
+        CoinSound.Play();
     }
 }
