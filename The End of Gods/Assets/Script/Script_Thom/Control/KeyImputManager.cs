@@ -37,11 +37,24 @@ public static class KeyImputManager
         KeyCode.P
     };
 
+    public static Dictionary<string, KeyCode> KeyMapping
+    {
+        get { return keyMapping; }
+        set { keyMapping = value; }
+    }
+
+    public static Dictionary<string, KeyCode> DefaultKeyMapping
+    {
+        get { return defaultKeyMapping; }
+        set { defaultKeyMapping = value; }
+    }
+
     public static void KeyInputManager()
     {
         if (!isInitialize){
- InitializeDictionary();
+          
             freePlayerMouvement();
+        
         }
        
     }
@@ -55,6 +68,7 @@ public static class KeyImputManager
             keyMapping.Add(keyMaps[i], defaults[i]);
         }
         isInitialize = true;
+        ControlController.controlController.SaveGame();
     }
 
     public static void SetKeyMap(string keyMap, KeyCode key)
@@ -68,6 +82,7 @@ public static class KeyImputManager
             checkIfKeyIsUsed(key);
 
             keyMapping[keyMap] = key;
+            ControlController.controlController.SaveGame();
         }
 
 
@@ -143,4 +158,5 @@ public static class KeyImputManager
     {
         return mouvementLock;
     }
+   
 }

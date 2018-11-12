@@ -31,6 +31,7 @@ public class ShopControl : MonoBehaviour {
             updateHealthPrice();
             updatePlayerMoney();
             playCoinAudio();
+            save();
         }
         else
         {
@@ -50,6 +51,7 @@ public class ShopControl : MonoBehaviour {
             updateDefencePrice();
             updatePlayerMoney();
             playCoinAudio();
+            save();
         }
         else
         {
@@ -69,6 +71,7 @@ public class ShopControl : MonoBehaviour {
             updateAttackPrice();
             updatePlayerMoney();
             playCoinAudio();
+            save();
         }
         else
         {
@@ -110,6 +113,12 @@ public class ShopControl : MonoBehaviour {
     private void updatePlayerMoney()
     {
         playerMoneytext.text = Player_Info.Money.ToString();
+    }
+
+    private void save()
+    {
+        PlayerInfoController.playerInfoController.SaveGame();
+        ShopInfoController.shopInfoController.SaveGame();
     }
 
     private void playCoinAudio()

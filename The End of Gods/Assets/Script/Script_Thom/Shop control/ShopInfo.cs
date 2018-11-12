@@ -12,16 +12,19 @@ public static class ShopInfo {
     public static int HealthPrice
     {
         get { return healthPrice; }
+        set { healthPrice = value; }
     }
 
     public static int DefencePrice
     {
         get { return defencePrice; }
+        set { defencePrice = value; }
     }
 
     public static int AttackPrice
     {
         get { return attackPrice; }
+        set { attackPrice = value; }
     }
 
     public static void incrementHealth()
