@@ -25,12 +25,6 @@ public class DummyActions : MonoBehaviour {
         triggerHurtAnimation();
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        stopHurtAnimation();
-    }
-
-
     public void triggerHitSplat(int amount)
     {
         hitsplat = hitsplatPrefab;
@@ -40,13 +34,7 @@ public class DummyActions : MonoBehaviour {
     public void triggerHurtAnimation()
     {
         isAttacked = true;
-        animator.Play("DummyHurt",-1,0f);
-        Invoke("stopHurtAnimation", 1f);
+        animator.SetTrigger("IsAttacked");
     }
 
-    public void stopHurtAnimation()
-    {
-        isAttacked = false;
-        //animator.ResetTrigger("isAttacked");
-    }
 }

@@ -81,6 +81,9 @@ TagManager:
   - name: Player
     uniqueID: 3685627339
     locked: 0
+  - name: Ennemie
+    uniqueID: 2837473571
+    locked: 0
   - name: Interface
     uniqueID: 2230012877
     locked: 0

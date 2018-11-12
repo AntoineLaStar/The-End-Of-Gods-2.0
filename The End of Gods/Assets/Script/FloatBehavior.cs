@@ -6,9 +6,9 @@ public class FloatBehavior : MonoBehaviour
 {
     float originalY;
 
-    public float direction = 1;
-    public float floatStrength = 0.2f;
-    public float floatSpeed = 2;
+    [SerializeField] public float direction = 1;
+    [SerializeField] public float floatStrength = 0.2f;
+    [SerializeField] public float floatSpeed = 2;
 
     void Start()
     {
