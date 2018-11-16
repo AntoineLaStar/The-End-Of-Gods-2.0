@@ -19102,7 +19102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b08dc56d657894f8b62cd1a79c5663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkScene: Scenes/OutsideCastle
+  linkScene: Scenes/Outside
 --- !u!114 &1913701632
 MonoBehaviour:
   m_ObjectHideFlags: 0

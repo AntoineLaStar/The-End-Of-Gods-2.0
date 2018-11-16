@@ -31,6 +31,10 @@ TagManager:
   - tpBleu
   - trap
   - OutsideDoor
+  - CastleDoor
+  - room1Enter
+  - room1Exit
+  - room2Enter
   layers:
   - Default
   - TransparentFX
