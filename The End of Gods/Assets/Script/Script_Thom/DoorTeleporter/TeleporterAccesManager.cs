@@ -7,7 +7,7 @@ public class TeleporterAccesManager : MonoBehaviour {
     static Dictionary<string, bool> teleporterAcces;
     static bool isInitialize = false;
 
-   
+
 
     static string[] telepoterName = new string[]
      {
@@ -21,7 +21,13 @@ public class TeleporterAccesManager : MonoBehaviour {
         true,
         false
     };
-    
+    public static Dictionary<string, bool> TeleporterAcces
+    {
+        get { return teleporterAcces; }
+        set { teleporterAcces = value; isInitialize = true; }
+    }
+
+
     public static void teleporterAccesManager()
     {
 
@@ -39,9 +45,10 @@ public class TeleporterAccesManager : MonoBehaviour {
         isInitialize = true;
     }
 
-    public static void SetKeyMap(string teleporterName, bool access)
+    public static void unlockTeleporteur(string teleporterName)
     {
-        teleporterAcces[teleporterName] = access;
+
+        teleporterAcces[teleporterName] = true;
 
     }
 
@@ -60,5 +67,14 @@ public class TeleporterAccesManager : MonoBehaviour {
     {
         return isInitialize;
     }
+    public static Dictionary<string, bool> getTeleporterAccess(){
+
+        if(!isInitialize){
+            InitializeDictionary();
+
+        }
+        return teleporterAcces;
+    }
+
 
 }

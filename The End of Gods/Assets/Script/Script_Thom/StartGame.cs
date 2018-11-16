@@ -13,6 +13,7 @@ public class StartGame : MonoBehaviour
 
     public void LoadScene()
     {
+
         SceneManager.LoadScene("Scenes/Hell");
     }
 
@@ -20,5 +21,6 @@ public class StartGame : MonoBehaviour
     {
         File.Delete(Application.persistentDataPath + "/gameInfo.dat");
         File.Delete(Application.persistentDataPath + "/shopInfo.dat");
+        File.Delete(Application.persistentDataPath + "/teleporteurInfo.dat");
     }
 }

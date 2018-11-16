@@ -40,7 +40,7 @@ public static class KeyImputManager
     public static Dictionary<string, KeyCode> KeyMapping
     {
         get { return keyMapping; }
-        set { keyMapping = value; }
+        set { keyMapping = value; isInitialize = true; }
     }
 
     public static Dictionary<string, KeyCode> DefaultKeyMapping
@@ -52,7 +52,7 @@ public static class KeyImputManager
     public static void KeyInputManager()
     {
         if (!isInitialize){
-          
+            InitializeDictionary();
             freePlayerMouvement();
         
         }

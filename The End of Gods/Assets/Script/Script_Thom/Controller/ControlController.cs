@@ -37,7 +37,7 @@ public class ControlController : MonoBehaviour {
 
     public void SetDefaultValue()
     {
-        keyMapping = KeyImputManager.KeyMapping;
+        keyMapping = KeyImputManager.DefaultKeyMapping;
   
     }
 
