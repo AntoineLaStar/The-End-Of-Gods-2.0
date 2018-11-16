@@ -14,13 +14,4 @@ public class Boss : Ennemie {
 		
 	}
 
-    public override void DealDamage(int damage)
-    {
-
-    }
-
-    public override void Destroy()
-    {
-
-    }
 }

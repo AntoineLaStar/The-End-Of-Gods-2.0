@@ -23,6 +23,6 @@ public class Mouvement : MonoBehaviour {
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
-
     }
+
 }

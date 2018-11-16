@@ -34,7 +34,7 @@ public class sound : MonoBehaviour
                 keyPressed = vKey;
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
                 {
-                    sourceAudio.Play();
+                    //sourceAudio.Play();
                 }
             }
         }

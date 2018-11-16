@@ -4,23 +4,14 @@ using UnityEngine;
 
 public class Ennemie1 : Ennemie {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    public override void DealDamage(int damage)
+    public override void GiveMoney()
     {
-
+        Player_Info.addMoney(200);
     }
 
-    public override void Destroy()
+    public override void InitializeInfo()
     {
-
+       startingHealth = 100;
+       currentHealth = startingHealth;
     }
 }
