@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class EnterDoor : MonoBehaviour
 {
+
+    [SerializeField] public Sprite backgroundSprite;
+
     [SerializeField] string linkScene;
     static string tag;
     static bool DoorHasBeenUsed = false;
@@ -43,8 +46,9 @@ public class EnterDoor : MonoBehaviour
     {
         
             DoorHasBeenUsed = true;
-            SceneManager.LoadScene(linkScene);
-        
+        print("here");
+           SceneManager.LoadScene(linkScene);
+        //Background();
     }
     static public void setTeleportHasBeenUsed()
     {
@@ -54,5 +58,36 @@ public class EnterDoor : MonoBehaviour
     {
         return tag;
     }
+
+
+    public void Background()
+    {
+        /*GameObject background = GameObject.FindGameObjectWithTag("background");
+        if (background)
+        {
+            print("found");
+            print("here123");
+            background.GetComponent<SpriteRenderer>().sprite = backgroundSprite;
+        }
+        else
+        {
+            print("not found");
+        }
+        print(gameObject.tag);
+        if (background)
+        {
+            
+        }*/
+       
+    
+    /*if (gameObject.tag == "OutsideDoor")
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = outside;
+    }
+    else if (gameObject.tag == "hellDoor")
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = hell;
+    }*/
+}
     
 }

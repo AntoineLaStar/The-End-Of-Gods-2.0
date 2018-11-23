@@ -9,6 +9,7 @@ public class PlayerPlatformerController : PhysicsObject
     public float jumpTakeOffSpeed = 12;
     public bool isAttacking = false;
     public bool ableToDash = true;
+    public GameObject background;
     float PlayerDashDelay = Player_Info.dashDelay;
     float timeForNextDash;
     float PlayerInvisibleDelay = Player_Info.invisibilityDelay;
@@ -24,6 +25,9 @@ public class PlayerPlatformerController : PhysicsObject
 
     bool isGauche;
 
+    [SerializeField] public Sprite hellBackground;
+    [SerializeField] public Sprite outsideBackground;
+
     void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -31,9 +35,18 @@ public class PlayerPlatformerController : PhysicsObject
         rigidbody = GetComponent<Rigidbody2D>();
         timeForNextDash = PlayerDashDelay;
         timeForNextInvisiblity = PlayerInvisibleDelay;
-       
+        SetBackground();
     }
-
+    private void SetBackground()
+    {
+        if(Player_Info.background == Player_Info.Background.hell)
+        {
+            background.GetComponent<SpriteRenderer>().sprite = hellBackground;
+        }else if (Player_Info.background == Player_Info.Background.outside)
+        {
+            background.GetComponent<SpriteRenderer>().sprite = outsideBackground;
+        }
+    }
     protected override void ComputeVelocity()
     {
         

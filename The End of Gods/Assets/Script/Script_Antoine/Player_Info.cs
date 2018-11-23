@@ -22,6 +22,10 @@ public static class Player_Info {
     public static float invisibilityLenght = 2;
     public static float invisibilityDelay = 3;
     public static bool ableToInvisibility = true;
+    public enum Background { hell, outside};
+    public static Background background = Background.hell;
+
+
 
     public static int CurrentHealth
     {

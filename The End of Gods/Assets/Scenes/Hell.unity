@@ -19079,6 +19079,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1830601212910074, guid: 6401a86e50b68f84d8971286cb1e2a98,
     type: 2}
   m_PrefabInternal: {fileID: 1546189670}
+--- !u!114 &1913701628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1913701626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0302b48a508f484ebe742a97c15a158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1913701630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19091,6 +19102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagDoor: OutsideDoor
+  backgroundSprite: {fileID: 21300000, guid: df59be3d208c7d445a5772251b06d43a, type: 3}
 --- !u!114 &1913701631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19102,6 +19114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b08dc56d657894f8b62cd1a79c5663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundSprite: {fileID: 21300000, guid: df59be3d208c7d445a5772251b06d43a, type: 3}
   linkScene: Scenes/Outside
 --- !u!114 &1913701632
 MonoBehaviour:
@@ -19165,6 +19178,10 @@ Prefab:
     - target: {fileID: 4935190791044662, guid: ad0e3d93a043c4b45b6c5815f443e595, type: 2}
       propertyPath: m_LocalPosition.y
       value: -2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1894380446465536, guid: ad0e3d93a043c4b45b6c5815f443e595, type: 2}
+      propertyPath: m_TagString
+      value: background
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad0e3d93a043c4b45b6c5815f443e595, type: 2}

@@ -191,7 +191,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4735443640247660, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -42.74
+      value: 67.77
       objectReference: {fileID: 0}
     - target: {fileID: 4735443640247660, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
       propertyPath: m_LocalPosition.y
@@ -271,11 +271,34 @@ Prefab:
     - target: {fileID: 114084411179093144, guid: 6401a86e50b68f84d8971286cb1e2a98,
         type: 2}
       propertyPath: linkScene
-      value: Scenes/Outside
+      value: Scenes/Hell
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756716100370294, guid: 6401a86e50b68f84d8971286cb1e2a98, type: 2}
+      propertyPath: m_TagString
+      value: hellDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6401a86e50b68f84d8971286cb1e2a98, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1458707683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1830601212910074, guid: 6401a86e50b68f84d8971286cb1e2a98,
+    type: 2}
+  m_PrefabInternal: {fileID: 1458707682}
+--- !u!114 &1458707684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1458707683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0302b48a508f484ebe742a97c15a158, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CastleWall: {fileID: 21300000, guid: d2675be86f338b64a85a60f04c255325, type: 3}
+  outside: {fileID: 21300000, guid: 6a3d34ea700e5a842a27bd272bbe7d4e, type: 3}
+  hell: {fileID: 21300000, guid: 8f8694e6fb59afd408a3b7351875118a, type: 3}
 --- !u!1 &1728051053
 GameObject:
   m_ObjectHideFlags: 0

@@ -35,6 +35,8 @@ TagManager:
   - room1Enter
   - room1Exit
   - room2Enter
+  - hellDoor
+  - background
   layers:
   - Default
   - TransparentFX
