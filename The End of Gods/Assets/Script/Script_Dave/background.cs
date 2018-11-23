@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class background : MonoBehaviour {
 
-    
+    [SerializeField] public Sprite CastleWall;
+    [SerializeField] public Sprite outside;
+    [SerializeField] public Sprite hell;
 
     private void OnTriggerStay2D(Collider2D collision)
         {
@@ -18,7 +20,14 @@ public class background : MonoBehaviour {
                         KeyCode keyPressed = vKey;
                         if (keyPressed.ToString() == KeyImputManager.GetKeyBind("interact"))
                         {
-                       
+                            if(gameObject.tag == "OutsideDoor")
+                        {
+                            gameObject.GetComponent<SpriteRenderer>().sprite = outside;
+                        }
+                            else if (gameObject.tag == "hellDoor")
+                        {
+                            gameObject.GetComponent<SpriteRenderer>().sprite = hell;
+                        }
 
                             
                         }

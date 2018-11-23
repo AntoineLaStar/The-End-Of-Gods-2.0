@@ -164,11 +164,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4735443640247660, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.534087
+      value: -2.18
       objectReference: {fileID: 0}
     - target: {fileID: 4735443640247660, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.1
+      value: 1.96
       objectReference: {fileID: 0}
     - target: {fileID: 4735443640247660, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -192,6 +192,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4735443640247660, guid: 18097bfeae2cb9744a83c6860ec9f34a, type: 2}
       propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 61387909768745140, guid: 18097bfeae2cb9744a83c6860ec9f34a,
+        type: 2}
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -31768,7 +31773,7 @@ TilemapCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

@@ -28,7 +28,7 @@ public class PlayerPlatformerController : PhysicsObject
     [SerializeField] public Sprite hellBackground;
     [SerializeField] public Sprite outsideBackground;
 
-    void Awake()
+    void Start()
     {
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
