@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca33b4bd5c374349b5987307d1d70e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkScene: 2
+  linkScene: Scenes/TestScene
   errorMessage: {fileID: 1536388908}
 --- !u!114 &255534447
 MonoBehaviour:
@@ -293,7 +293,7 @@ Transform:
   m_Children:
   - {fileID: 1451117138}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &301263023
 Prefab:
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca33b4bd5c374349b5987307d1d70e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkScene: 2
+  linkScene: 
   errorMessage: {fileID: 1536388908}
 --- !u!114 &757910094
 MonoBehaviour:
@@ -690,6 +690,11 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 223615359673837686, guid: 2f5381038549c8c44a7956b24d4d979f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f5381038549c8c44a7956b24d4d979f, type: 2}
   m_IsPrefabAsset: 0
@@ -783,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca33b4bd5c374349b5987307d1d70e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkScene: 2
+  linkScene: Scenes/TestScene
   errorMessage: {fileID: 1536388908}
 --- !u!61 &924423786
 BoxCollider2D:

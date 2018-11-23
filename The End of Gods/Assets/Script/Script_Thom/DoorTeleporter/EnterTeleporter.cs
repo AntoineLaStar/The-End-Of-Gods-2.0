@@ -5,8 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EnterTeleporter : MonoBehaviour {
-    [SerializeField] int linkScene;
-   static string tag;
+    [SerializeField] string linkScene;
+   static string tptag;
     [SerializeField] Canvas errorMessage;
     static bool teleportHasBeenUsed = false;
 	void Start () {
@@ -29,7 +29,7 @@ public class EnterTeleporter : MonoBehaviour {
                     KeyCode keyPressed = vKey;
                     if (keyPressed.ToString() == KeyImputManager.GetKeyBind("interact"))
                     {
-                        tag = gameObject.tag;
+                        tptag = gameObject.tag;
                         enterTeleporter();
                     }
                 }
@@ -59,7 +59,7 @@ public class EnterTeleporter : MonoBehaviour {
     }
     static public string getTag()
     {
-        return tag;
+        return tptag;
     }
     public void changeMessageState()
     {

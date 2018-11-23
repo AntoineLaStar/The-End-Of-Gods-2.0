@@ -31,6 +31,7 @@ TagManager:
   - tpBleu
   - trap
   - OutsideDoor
+  - Music
   layers:
   - Default
   - TransparentFX
