@@ -77,6 +77,16 @@ public static class Player_Info {
        
     }
 
+    public static int Money
+    {
+        get { return money; }
+    }
+
+    public static void reduceMoney(int moneyToRemove)
+    {
+        money -= moneyToRemove;
+    }
+
     public static void addMoney(int amount)
     {
         money += amount;
