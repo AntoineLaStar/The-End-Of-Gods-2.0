@@ -139,19 +139,17 @@ public class PlayerPlatformerController : PhysicsObject
 
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
                 {
-                   
-                    if (HitTracker.HaveHit == false)
+              
+                        if (HitTracker.HaveHit == false)
                     {
-                            sound.PlaySound("Swoosh");
+                            sound.PlaySound();
                           if (grounded == true)
                        {
 
                                 HitTracker.HaveHit = true;
                                 Invoke("delockAttack", Player_Info.attackDelay);
                                 animator.Play("knight_Attack");
-                                
-                            
-
+                               sound.PlaySound();
                             }
                        
                          

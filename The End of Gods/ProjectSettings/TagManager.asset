@@ -32,6 +32,8 @@ TagManager:
   - trap
   - OutsideDoor
   - Music
+  - coin
+  - heart
   layers:
   - Default
   - TransparentFX
@@ -71,6 +73,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 4278607981
+    locked: 0
+  - name: Teleporter
+    uniqueID: 1702745013
     locked: 0
   - name: Floor
     uniqueID: 4254944689

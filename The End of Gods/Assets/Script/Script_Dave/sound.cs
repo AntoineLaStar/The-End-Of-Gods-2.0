@@ -22,22 +22,10 @@ public class sound : MonoBehaviour
     {
     }
 
-    public static void PlaySound(string clip)
+    public static void PlaySound()
     {
         //sourceAudio.PlayOneShot(Swoosh);
-        foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
-        {
-
-
-            if (Input.GetKey(vKey))
-            {
-                keyPressed = vKey;
-                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
-                {
-                    //sourceAudio.Play();
-                }
-            }
-        }
+        sourceAudio.Play();
     }
 
 }

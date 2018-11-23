@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AfficherCoinOnLoad : MonoBehaviour {
+public class LockTeleporter : MonoBehaviour {
 
 	// Use this for initialization
-	void Awake() {
-      
+	void Start () {
+        TeleporterAccesManager.lockAllTeleporter();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Player_Info.afficherMoney();
-    }
+		
+	}
 }

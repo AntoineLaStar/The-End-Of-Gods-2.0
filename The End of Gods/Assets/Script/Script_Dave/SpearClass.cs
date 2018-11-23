@@ -46,7 +46,7 @@ public class SpearClass : MonoBehaviour
                         Player_Info.CharacterName = knight_1.name;
                         HitTracker.HaveHit = false;
                         destroyPlayer();
-                        
+                        Player_Info.afficherHealth();
 
                     }
                 }

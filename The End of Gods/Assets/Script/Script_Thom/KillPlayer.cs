@@ -1,10 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class KillPlayer : MonoBehaviour {
 
+    public void Update()
+    {
+   
+    }
+
+ 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,7 +23,7 @@ public class KillPlayer : MonoBehaviour {
         }
     }
 
-    private void killPlayer()
+    public void killPlayer()
     {
         Animator playerAnimator = gameObject.GetComponent<Animator>();
         playerAnimator.Play("knight_1_Die");
