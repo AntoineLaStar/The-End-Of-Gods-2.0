@@ -541,6 +541,7 @@ GameObject:
   - component: {fileID: 709264775}
   - component: {fileID: 709264779}
   - component: {fileID: 709264781}
+  - component: {fileID: 709264782}
   m_Layer: 11
   m_Name: Mob2
   m_TagString: Untagged
@@ -644,7 +645,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 709264774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.89, y: -13.98, z: -0.10508866}
+  m_LocalPosition: {x: 11.17, y: -17.05, z: -0.10508866}
   m_LocalScale: {x: 2.2089, y: 2.2089, z: 2.2089}
   m_Children: []
   m_Father: {fileID: 0}
@@ -669,7 +670,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 709264774}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e513af74862cb9d45810f6fbbec1d322, type: 3}
   m_Name: 
@@ -696,6 +697,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &709264782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 709264774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd30f09b8f40d5f4580a43e42ea9ad96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &881128377
 Prefab:
   m_ObjectHideFlags: 0
@@ -12149,22 +12161,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1115387183128630, guid: ad0e3d93a043c4b45b6c5815f443e595, type: 2}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1843337788335412, guid: ad0e3d93a043c4b45b6c5815f443e595, type: 2}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1894380446465536, guid: ad0e3d93a043c4b45b6c5815f443e595, type: 2}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1760528619704802, guid: ad0e3d93a043c4b45b6c5815f443e595, type: 2}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad0e3d93a043c4b45b6c5815f443e595, type: 2}
   m_IsPrefabAsset: 0
@@ -12202,7 +12198,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 853.6, y: 499.1}
+  m_AnchoredPosition: {x: 846, y: 495}
   m_SizeDelta: {x: 212.9, y: 81.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2024025109
