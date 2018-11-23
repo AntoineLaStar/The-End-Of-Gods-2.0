@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.UI;
+using System.IO;
+using System;
 
-public static class Player_Info {
+public static class Player_Info
+{
+
     public static int startingHealth = 100;
-    public static int currentHealth ;
+    public static int currentHealth;
     public static float defence = 0.0f;
     public static int degat = 51;
     public static int money = 500;
@@ -14,7 +19,7 @@ public static class Player_Info {
     public static bool ableToHit = true;
     public static float timeForNextAttack = 0.0f;
     public static GameObject character;
-    public static string characterName; 
+    public static string characterName;
     public static int dashForce = 15;
     public static float dashLenght = 0.3f;
     public static float dashDelay = 1;
@@ -32,7 +37,7 @@ public static class Player_Info {
     public static GameObject Character
     {
         get { return character; }
-        set { character = value;  }
+        set { character = value; }
     }
 
 
@@ -49,8 +54,8 @@ public static class Player_Info {
 
     public static void BuyHealth()
     {
-        
-        startingHealth +=(Mathf.RoundToInt(startingHealth * 0.05f));
+
+        startingHealth += (Mathf.RoundToInt(startingHealth * 0.05f));
     }
     public static void BuyDefence()
     {
@@ -74,7 +79,7 @@ public static class Player_Info {
     public static void setPlayerGameObject(GameObject thePlayer)
     {
         character = thePlayer;
-       
+
     }
 
     public static int Money
