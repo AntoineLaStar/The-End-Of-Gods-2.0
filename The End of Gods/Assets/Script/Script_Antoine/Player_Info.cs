@@ -12,7 +12,7 @@ public static class Player_Info
     public static int startingHealth = 100;
     public static int currentHealth;
     public static float defence = 0.0f;
-    public static int degat = 51;
+    public static int degat = 11;
     public static int money = 500;
 
     public static float attackDelay = 1;

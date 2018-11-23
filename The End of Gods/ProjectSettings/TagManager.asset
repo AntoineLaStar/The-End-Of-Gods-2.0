@@ -32,6 +32,7 @@ TagManager:
   - trap
   - OutsideDoor
   - Music
+  - coin
   layers:
   - Default
   - TransparentFX
@@ -44,7 +45,7 @@ TagManager:
   - Background
   - Terrain
   - BackgroundItem
-  - 
+  - ennemi
   - 
   - 
   - 
@@ -77,6 +78,9 @@ TagManager:
     locked: 0
   - name: BackgroundItem
     uniqueID: 443016463
+    locked: 0
+  - name: Ennemie
+    uniqueID: 3170912463
     locked: 0
   - name: Player
     uniqueID: 3685627339

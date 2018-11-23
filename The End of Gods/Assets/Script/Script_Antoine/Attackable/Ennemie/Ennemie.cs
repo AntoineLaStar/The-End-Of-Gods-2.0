@@ -6,26 +6,66 @@ public class Ennemie : MonoBehaviour,Attackable {
 
     protected int currentHealth;
     protected int startingHealth;
+    protected bool immunity = true;
+    protected float immunityTime = 1f;
+    protected float immunityTimeLeft;
+    [SerializeField] GameObject hitsplatPrefab;
+    GameObject hitsplat;
 
-
-	void Start () {
+    void Start () {
         InitializeInfo();
+        resetImmunity();
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        GererImmunity();
+        CheckCollisionWithPlayer();
+        print(currentHealth);
+    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void GererImmunity()
     {
-        if (collision.gameObject.tag == "SwordCollider")
+        immunityTimeLeft -= Time.deltaTime;
+
+        if (immunityTimeLeft <= 0f)
         {
-            DealDamage(Player_Info.degat);
-            print(currentHealth);
+            immunity = false;
         }
     }
 
+
+    protected void CheckCollisionWithPlayer()
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0f);
+
+        if (hitColliders.Length > 0)
+        {
+            for (int i = 0; i < hitColliders.Length; i++)
+            {
+                if (hitColliders[i].gameObject.tag == "SwordCollider")
+                {
+                    if (immunity == false)
+                    {
+                        DealDamage(Player_Info.Degat);
+                        resetImmunity();
+                        print(currentHealth);
+                    }
+                }
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position, transform.localScale);
+    }
+
+    protected void resetImmunity()
+    {
+        immunityTimeLeft = immunityTime;
+        immunity = true;
+    }
 
     public virtual void GiveMoney()
     {
@@ -35,8 +75,10 @@ public class Ennemie : MonoBehaviour,Attackable {
     public void DealDamage(int damage)
     {
         currentHealth -= damage;
+        triggerHitSplat(damage);
         if (currentHealth <= 0)
         {
+            print("test");
             Destroy();
         }
     }
@@ -45,6 +87,7 @@ public class Ennemie : MonoBehaviour,Attackable {
     {
         GiveMoney();
         DyingAnimation();
+        Destroy(gameObject);
     }
 
     public virtual void InitializeInfo()
@@ -53,17 +96,14 @@ public class Ennemie : MonoBehaviour,Attackable {
         currentHealth = startingHealth;
     }
 
+    public void triggerHitSplat(int amount)
+    {
+        hitsplat = hitsplatPrefab;
+        GameObject hitsplatClone = Instantiate(hitsplat, gameObject.transform.position, gameObject.transform.rotation);
+    }
+
     public void DyingAnimation()
     {
-        while (gameObject.GetComponent<CanvasGroup>().alpha > 0)
-        {
 
-            gameObject.GetComponent<CanvasGroup>().alpha -= 0.50f * Time.deltaTime;
-        }
-
-        if (gameObject.GetComponent<CanvasGroup>().alpha <= 0)
-        {
-            Destroy(gameObject);
-        }
     }
 }

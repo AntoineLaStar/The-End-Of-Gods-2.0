@@ -49,22 +49,6 @@ public class CollisonWithEnnemi : MonoBehaviour
         gameObject.GetComponent<Collider2D>().enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Dummy" && Player_Info.ableToHit == true)
-        {
-            Player_Info.timeForNextAttack = Player_Info.attackDelay;
-            Player_Info.ableToHit = false;
-            collision.gameObject.GetComponent<DummyActions>().DealDamage(Player_Info.degat);
-        }
-
-        Attackable objetAttackable = collision.gameObject.GetComponent<Attackable>();
-        if (objetAttackable != null)
-        {
-            objetAttackable.DealDamage(Player_Info.degat);
-        }
-
-    }
 
     
 }
