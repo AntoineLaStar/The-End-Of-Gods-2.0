@@ -19069,6 +19069,10 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1830601212910074, guid: 6401a86e50b68f84d8971286cb1e2a98, type: 2}
+      propertyPath: m_TagString
+      value: hellDoor
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114708718166551338, guid: 6401a86e50b68f84d8971286cb1e2a98, type: 2}
     - {fileID: 114084411179093144, guid: 6401a86e50b68f84d8971286cb1e2a98, type: 2}
@@ -19090,6 +19094,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0302b48a508f484ebe742a97c15a158, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CastleWall: {fileID: 0}
+  outside: {fileID: 0}
+  hell: {fileID: 0}
 --- !u!114 &1913701630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19101,7 +19108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952d021d69e6f2a4f962f385b8ce8743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagDoor: OutsideDoor
+  tagDoor: helldoor
   backgroundSprite: {fileID: 21300000, guid: 6a3d34ea700e5a842a27bd272bbe7d4e, type: 3}
 --- !u!114 &1913701631
 MonoBehaviour:

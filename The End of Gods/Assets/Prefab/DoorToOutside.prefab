@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4393423138589992}
   m_Layer: 0
   m_Name: DoorToOutside
-  m_TagString: Untagged
+  m_TagString: hellDoor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 61374310348976918}
   m_Layer: 0
   m_Name: DoorSprite
-  m_TagString: OutsideDoor
+  m_TagString: room1Enter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1756716100370294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.583166, y: 3.5035164, z: 0.02734375}
+  m_LocalPosition: {x: 61.77, y: -0.88, z: 0.02734375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4364726328058530}
@@ -81,7 +81,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.011861235, y: -0.25987887}
@@ -108,7 +108,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b08dc56d657894f8b62cd1a79c5663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkScene: Scenes/OutsideCastle
+  backgroundSprite: {fileID: 0}
+  linkScene: Scenes/room1
 --- !u!114 &114708718166551338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,7 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952d021d69e6f2a4f962f385b8ce8743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagDoor: OutsideDoor
+  tagDoor: room1Enter
+  backgroundSprite: {fileID: 0}
 --- !u!212 &212438158599624508
 SpriteRenderer:
   m_ObjectHideFlags: 1
