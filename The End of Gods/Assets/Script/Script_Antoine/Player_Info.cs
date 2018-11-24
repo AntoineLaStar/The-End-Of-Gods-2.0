@@ -24,6 +24,7 @@ public static class Player_Info
     public static float dashLenght = 0.3f;
     public static float dashDelay = 1;
     public static bool ableToDash = true;
+    public static float immunityTime = 1.5f;
 
     public static float invisibilityLenght = 2;
     public static float invisibilityDelay = 3;
@@ -102,5 +103,7 @@ public static class Player_Info
     {
         GameObject.FindGameObjectWithTag("coin").GetComponent<Text>().text = Player_Info.money.ToString();
     }
+
+
 
 }

@@ -387,6 +387,7 @@ MonoBehaviour:
   jumpTakeOffSpeed: 12
   isAttacking: 0
   ableToDash: 1
+  immunity: 1
 --- !u!114 &114285576911492332
 MonoBehaviour:
   m_ObjectHideFlags: 1

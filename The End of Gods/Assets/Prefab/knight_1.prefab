@@ -119,7 +119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1735714996753652}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.139999, y: -16.851389, z: -1.2373047}
+  m_LocalPosition: {x: 8.840001, y: -16.851389, z: -1.2373047}
   m_LocalScale: {x: 0.24725, y: 0.242, z: 1}
   m_Children:
   - {fileID: 4723194884797578}
@@ -420,6 +420,7 @@ MonoBehaviour:
   jumpTakeOffSpeed: 12
   isAttacking: 0
   ableToDash: 1
+  immunity: 1
 --- !u!114 &114895897782742352
 MonoBehaviour:
   m_ObjectHideFlags: 1

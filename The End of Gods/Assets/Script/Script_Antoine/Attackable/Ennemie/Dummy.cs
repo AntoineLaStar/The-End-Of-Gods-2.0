@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dummy : Ennemie {
+public class Dummy : Ennemie
+{
     Animator animator;
 
     private void Start()
@@ -24,5 +25,15 @@ public class Dummy : Ennemie {
     public void triggerHurtAnimation()
     {
         animator.SetTrigger("IsAttacked");
+    }
+
+    public override void attackPlayer()
+    {
+
+    }
+
+    public override void playSound()
+    {
+
     }
 }

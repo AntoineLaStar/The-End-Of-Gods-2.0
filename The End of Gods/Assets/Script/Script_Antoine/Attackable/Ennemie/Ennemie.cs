@@ -9,6 +9,7 @@ public class Ennemie : MonoBehaviour,Attackable {
     protected bool immunity = true;
     protected float immunityTime = 1f;
     protected float immunityTimeLeft;
+    protected int degat;
     [SerializeField] GameObject hitsplatPrefab;
     GameObject hitsplat;
 
@@ -21,7 +22,6 @@ public class Ennemie : MonoBehaviour,Attackable {
 	void Update () {
         GererImmunity();
         CheckCollisionWithPlayer();
-        print(currentHealth);
     }
 
     private void GererImmunity()
@@ -47,13 +47,24 @@ public class Ennemie : MonoBehaviour,Attackable {
                 {
                     if (immunity == false)
                     {
+                        playSound();
                         DealDamage(Player_Info.Degat);
                         resetImmunity();
-                        print(currentHealth);
+                        
                     }
+                }
+                if (hitColliders[i].gameObject.tag == "Player")
+                {
+                    attackPlayer();
                 }
             }
         }
+    }
+
+    public virtual void playSound()
+    {
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.Play();
     }
 
     private void OnDrawGizmos()
@@ -78,10 +89,21 @@ public class Ennemie : MonoBehaviour,Attackable {
         triggerHitSplat(damage);
         if (currentHealth <= 0)
         {
-            print("test");
             Destroy();
         }
     }
+
+    public virtual void attackPlayer()
+    {
+        PlayerPlatformerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
+        if (player.immunity == false)
+        {
+            player.dealDamage(degat);
+            player.resetImmunity();
+            player.immunity = true;
+        }
+    }
+
 
     public void Destroy()
     {

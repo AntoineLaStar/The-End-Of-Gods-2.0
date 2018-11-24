@@ -15,7 +15,8 @@ public class PlayerPlatformerController : PhysicsObject
     float timeForNextInvisiblity;
     bool isShielded = false;
     bool isInvisible = false;
-
+    public bool immunity = true;
+    private float immunityTimeLeft;
 
     private Animator animator;
     private SpriteRenderer sprite;
@@ -31,12 +32,12 @@ public class PlayerPlatformerController : PhysicsObject
         rigidbody = GetComponent<Rigidbody2D>();
         timeForNextDash = PlayerDashDelay;
         timeForNextInvisiblity = PlayerInvisibleDelay;
-       
+        resetImmunity();
     }
 
     protected override void ComputeVelocity()
     {
-        
+        immunityTimeLeft -= Time.deltaTime;
         timeForNextDash -= Time.deltaTime;
         timeForNextInvisiblity -= Time.deltaTime;
   
@@ -47,6 +48,10 @@ public class PlayerPlatformerController : PhysicsObject
         if (timeForNextInvisiblity <= 0f)
         {
             Player_Info.ableToInvisibility = true;
+        }
+        if (immunityTimeLeft <= 0f)
+        {
+            immunity = false;
         }
 
         Vector2 move = Vector2.zero;
@@ -134,35 +139,22 @@ public class PlayerPlatformerController : PhysicsObject
                         isGauche = false;
                     }
 
-                
-
-
-                if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
-                {
-                   
-                    if (HitTracker.HaveHit == false)
+                    if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
                     {
-                            sound.PlaySound("Swoosh");
-                          if (grounded == true)
-                       {
-
-                                HitTracker.HaveHit = true;
-                                Invoke("delockAttack", Player_Info.attackDelay);
-                                animator.Play("knight_Attack");
-                                
-                            
-
-                            }
-                       
-                         
-                    }
-                    
-
                    
-                }
+                        if (HitTracker.HaveHit == false)
+                        {
+                                sound.PlaySound("Swoosh");
+                              if (grounded == true)
+                           {
 
+                                    HitTracker.HaveHit = true;
+                                    Invoke("delockAttack", Player_Info.attackDelay);
+                                    animator.Play("knight_Attack");
+                                }               
+                        }
+                    }
                     targetVelocity = move * maxSpeed;
-
                 }
             }
             animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
@@ -282,6 +274,33 @@ public class PlayerPlatformerController : PhysicsObject
     {
         gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
     }
+
+    public void resetImmunity()
+    {
+        immunityTimeLeft = Player_Info.immunityTime;
+    }
+
+    public void dealDamage(int amount)
+    {
+        Player_Info.currentHealth -= amount;
+        playerHurtAnimation();
+    }
+
+    private void playerHurtAnimation()
+    {
+        animator.SetBool("hurt",true);
+        KeyImputManager.LockPlayerMouvement();
+        Invoke("resetHurtAnimation",0.1f);
+
+    }
+
+    private void resetHurtAnimation()
+    {
+        animator.SetBool("hurt", false);
+        unlockPlayerMovement();
+    }
+
+
 
     }
 
