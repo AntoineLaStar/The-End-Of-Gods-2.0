@@ -9,22 +9,15 @@ public class Ennemie : MonoBehaviour,Attackable {
     protected bool immunity = true;
     protected float immunityTime = 1f;
     protected float immunityTimeLeft;
+    protected float attackDelay = 1f;
+    protected float attackDelayLeft;
     protected int degat;
+    protected bool dying = false;
+    protected Animator animator;
     [SerializeField] GameObject hitsplatPrefab;
     GameObject hitsplat;
 
-    void Start () {
-        InitializeInfo();
-        resetImmunity();
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        GererImmunity();
-        CheckCollisionWithPlayer();
-    }
-
-    private void GererImmunity()
+    public void GererImmunity()
     {
         immunityTimeLeft -= Time.deltaTime;
 
@@ -34,11 +27,9 @@ public class Ennemie : MonoBehaviour,Attackable {
         }
     }
 
-
     protected void CheckCollisionWithPlayer()
     {
         Collider2D[] hitColliders = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0f);
-
         if (hitColliders.Length > 0)
         {
             for (int i = 0; i < hitColliders.Length; i++)
@@ -50,12 +41,15 @@ public class Ennemie : MonoBehaviour,Attackable {
                         playSound();
                         DealDamage(Player_Info.Degat);
                         resetImmunity();
-                        
                     }
                 }
                 if (hitColliders[i].gameObject.tag == "Player")
                 {
-                    attackPlayer();
+                    if (!dying  && attackDelayLeft <= 0)
+                    {
+                        attackDelayLeft = attackDelay;
+                        attackPlayer();
+                    }
                 }
             }
         }
@@ -89,33 +83,30 @@ public class Ennemie : MonoBehaviour,Attackable {
         triggerHitSplat(damage);
         if (currentHealth <= 0)
         {
-            Destroy();
+            Dying();
         }
     }
 
     public virtual void attackPlayer()
     {
-        PlayerPlatformerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
-        if (player.immunity == false)
-        {
-            player.dealDamage(degat);
-            player.resetImmunity();
-            player.immunity = true;
-        }
+        Player_Info.hit();
+        playAttackAnimation();
     }
-
 
     public void Destroy()
     {
         GiveMoney();
-        DyingAnimation();
         Destroy(gameObject);
+
     }
 
     public virtual void InitializeInfo()
     {
         startingHealth = 50;
         currentHealth = startingHealth;
+        degat = 1;
+        attackDelay = 2f;
+        attackDelayLeft = attackDelay;
     }
 
     public void triggerHitSplat(int amount)
@@ -124,8 +115,22 @@ public class Ennemie : MonoBehaviour,Attackable {
         GameObject hitsplatClone = Instantiate(hitsplat, gameObject.transform.position, gameObject.transform.rotation);
     }
 
-    public void DyingAnimation()
+    public virtual void Dying()
     {
+        DyingAnimation();
+        Destroy();
+    }
 
+    public void decrementDelay()
+    {
+        attackDelayLeft -= Time.deltaTime;
+    }
+
+    public virtual void DyingAnimation()
+    {
+    }
+
+    public virtual void playAttackAnimation()
+    {
     }
 }

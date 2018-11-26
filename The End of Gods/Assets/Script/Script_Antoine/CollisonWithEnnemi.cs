@@ -15,7 +15,7 @@ public class CollisonWithEnnemi : MonoBehaviour
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
         Player_Info.timeForNextAttack = PlayerAttackDelay;
-        
+      
     }
 	
 	void Update () {
@@ -36,7 +36,6 @@ public class CollisonWithEnnemi : MonoBehaviour
                 {
                     gameObject.GetComponent<Collider2D>().enabled = true;
                     Invoke("enableColliderWeapon", 0.5f);
-                   
                 }
 
             }

@@ -7,7 +7,7 @@ public class MouvementEnnemie : MonoBehaviour {
     [SerializeField] public float minDistance = 5f;
     bool spriteIsGauche = false;
     GameObject player;
-    Transform target;
+    Transform target;  
     float range;
 
     void Start()

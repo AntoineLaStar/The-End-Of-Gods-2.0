@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class Dummy : Ennemie
 {
-    Animator animator;
-
     private void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
+        InitializeInfo();
+        resetImmunity();
+    }
+
+    private void Update()
+    {
+        GererImmunity();
+        CheckCollisionWithPlayer();
     }
 
     public override void GiveMoney()
@@ -18,7 +23,7 @@ public class Dummy : Ennemie
 
     public override void InitializeInfo()
     {
-        startingHealth = 1999;
+        startingHealth = 999999;
         currentHealth = startingHealth;
     }
 
@@ -27,13 +32,4 @@ public class Dummy : Ennemie
         animator.SetTrigger("IsAttacked");
     }
 
-    public override void attackPlayer()
-    {
-
-    }
-
-    public override void playSound()
-    {
-
-    }
 }
