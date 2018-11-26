@@ -40,6 +40,7 @@ TagManager:
   - roofDoor
   - room3Enter
   - room2Exit
+  - room3Exit
   layers:
   - Default
   - TransparentFX

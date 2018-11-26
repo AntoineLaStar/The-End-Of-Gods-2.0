@@ -160,6 +160,20 @@ Prefab:
       propertyPath: m_TagString
       value: roofDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 1830601212910074, guid: 6401a86e50b68f84d8971286cb1e2a98, type: 2}
+      propertyPath: m_TagString
+      value: roofDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114708718166551338, guid: 6401a86e50b68f84d8971286cb1e2a98,
+        type: 2}
+      propertyPath: tagDoor
+      value: roofDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 114084411179093144, guid: 6401a86e50b68f84d8971286cb1e2a98,
+        type: 2}
+      propertyPath: linkScene
+      value: Scenes/roof
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 61374310348976918, guid: 6401a86e50b68f84d8971286cb1e2a98, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 6401a86e50b68f84d8971286cb1e2a98, type: 2}
