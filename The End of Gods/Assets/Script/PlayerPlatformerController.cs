@@ -13,8 +13,8 @@ public class PlayerPlatformerController : PhysicsObject
     float timeForNextDash;
     float PlayerInvisibleDelay = Player_Info.invisibilityDelay;
     float timeForNextInvisiblity;
-    bool isShielded = false;
-    bool isInvisible = false;
+    public bool isShielded = false;
+    public bool isInvisible = false;
     public bool immunity = true;
     private float immunityTimeLeft;
 

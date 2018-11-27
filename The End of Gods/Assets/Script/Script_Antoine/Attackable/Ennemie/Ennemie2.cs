@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Ennemie2 : Ennemie {
     [SerializeField] public float speed = 1f;
-    [SerializeField] public float minDistance = 5f;
+    public bool movingRight = true;
+    [SerializeField] public float minDistance = 0.75f;
     bool spriteIsGauche = false;
+    string TagPointA;
+    string TagPointB;
     GameObject player;
     Transform target;
+    bool goingRight = false;
     float range;
-
 
     private void Start()
     {
@@ -17,6 +20,8 @@ public class Ennemie2 : Ennemie {
         InitializeInfo();
         resetImmunity();
     }
+
+
 
     private void Update()
     {
@@ -30,20 +35,20 @@ public class Ennemie2 : Ennemie {
     {
         if (!dying)
         {
+
             player = GameObject.FindGameObjectWithTag("Player");
             target = player.transform;
             range = Vector2.Distance(transform.position, target.position);
 
             if (range > minDistance)
             {
-                transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
-                animator.SetBool("Walking",true);
+                transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, target.position.y), speed * Time.deltaTime);
+                animator.SetBool("Walking", true);
             }
             else
             {
                 animator.SetBool("Walking", false);
             }
-
 
             CheckCollisionWithPlayer();
             verifierSprite();

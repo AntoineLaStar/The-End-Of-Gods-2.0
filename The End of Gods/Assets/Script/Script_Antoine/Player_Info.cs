@@ -12,7 +12,7 @@ public static class Player_Info
     public static int startingHealth = 100;
     public static int currentHealth;
     public static float defence = 0.0f;
-    public static int degat = 100;
+    public static int degat = 75;
     public static int money = 500;
 
     public static float attackDelay = 1;
@@ -107,7 +107,7 @@ public static class Player_Info
     public static void hit()
     {
         PlayerPlatformerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
-        if (player.immunity == false)
+        if (player.immunity == false && player.isShielded == false && player.isInvisible)
         {
             player.dealDamage(degat);
             player.resetImmunity();
