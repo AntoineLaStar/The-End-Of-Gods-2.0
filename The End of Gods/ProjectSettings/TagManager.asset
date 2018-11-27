@@ -41,6 +41,7 @@ TagManager:
   - room3Enter
   - room2Exit
   - room3Exit
+  - Teleport
   layers:
   - Default
   - TransparentFX

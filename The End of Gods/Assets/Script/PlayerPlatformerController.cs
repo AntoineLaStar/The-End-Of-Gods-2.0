@@ -27,6 +27,7 @@ public class PlayerPlatformerController : PhysicsObject
 
     [SerializeField] public Sprite hellBackground;
     [SerializeField] public Sprite outsideBackground;
+    [SerializeField] public Sprite castleBackground;
 
     void Start()
     {
@@ -39,12 +40,16 @@ public class PlayerPlatformerController : PhysicsObject
     }
     private void SetBackground()
     {
+       
         if(Player_Info.background == Player_Info.Background.hell)
         {
             background.GetComponent<SpriteRenderer>().sprite = hellBackground;
         }else if (Player_Info.background == Player_Info.Background.outside)
         {
             background.GetComponent<SpriteRenderer>().sprite = outsideBackground;
+        }else if(Player_Info.background == Player_Info.Background.castle)
+        {
+            background.GetComponent<SpriteRenderer>().sprite = castleBackground;
         }
     }
     protected override void ComputeVelocity()

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class KillPlayer : MonoBehaviour {
 
+  
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,13 +19,15 @@ public class KillPlayer : MonoBehaviour {
 
     private void killPlayer()
     {
+        print("die");
         Animator playerAnimator = gameObject.GetComponent<Animator>();
-        playerAnimator.Play("knight_1_Die");
+        playerAnimator.SetTrigger("Die");
         Player_Info.CharacterName = "knight_base";
         Invoke("TeleportPlayer", 1f);
     }
     private void TeleportPlayer()
     {
+       
         Animator playerAnimator = gameObject.GetComponent<Animator>();
         SceneManager.LoadScene("Scenes/Hell");
     }

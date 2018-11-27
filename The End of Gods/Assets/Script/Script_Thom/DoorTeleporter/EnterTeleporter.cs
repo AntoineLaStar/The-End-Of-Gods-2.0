@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EnterTeleporter : MonoBehaviour {
-    [SerializeField] int linkScene;
+    [SerializeField] String linkScene;
    static string tag;
     [SerializeField] Canvas errorMessage;
     static bool teleportHasBeenUsed = false;

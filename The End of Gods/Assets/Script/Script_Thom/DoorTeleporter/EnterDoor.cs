@@ -8,6 +8,7 @@ public class EnterDoor : MonoBehaviour
 {
 
     [SerializeField] public Sprite backgroundSprite;
+    [SerializeField] public Player_Info.Background backgroundToSet;
 
     [SerializeField] string linkScene;
     static string tag;
@@ -48,7 +49,7 @@ public class EnterDoor : MonoBehaviour
             DoorHasBeenUsed = true;
         print("here");
            SceneManager.LoadScene(linkScene);
-        //Background();
+        Background();
     }
     static public void setTeleportHasBeenUsed()
     {
@@ -62,6 +63,7 @@ public class EnterDoor : MonoBehaviour
 
     public void Background()
     {
+        Player_Info.background = backgroundToSet;
         /*GameObject background = GameObject.FindGameObjectWithTag("background");
         if (background)
         {
