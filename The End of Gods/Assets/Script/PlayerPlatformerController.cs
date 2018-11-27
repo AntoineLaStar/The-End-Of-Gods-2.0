@@ -13,8 +13,8 @@ public class PlayerPlatformerController : PhysicsObject
     float timeForNextDash;
     float PlayerInvisibleDelay = Player_Info.invisibilityDelay;
     float timeForNextInvisiblity;
-    bool isShielded = false;
-    bool isInvisible = false;
+    public bool isShielded = false;
+    public bool isInvisible = false;
     public bool immunity = true;
     private float immunityTimeLeft;
 
@@ -234,11 +234,6 @@ public class PlayerPlatformerController : PhysicsObject
         }
     }
 
-    public void unlockPlayerMovement()
-    {
-        KeyImputManager.freePlayerMouvement();
-        rigidbody.velocity = Vector3.zero;
-    }
 
     public void playerDash()
     {
@@ -288,21 +283,21 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void playerHurtAnimation()
     {
-        animator.SetBool("hurt",true);
+        animator.SetTrigger("hurt");
         KeyImputManager.LockPlayerMouvement();
-        Invoke("resetHurtAnimation",0.1f);
+        Invoke("unlockPlayerMovement", 0.1f);
 
     }
 
-    private void resetHurtAnimation()
+    public void unlockPlayerMovement()
     {
-        animator.SetBool("hurt", false);
-        unlockPlayerMovement();
+        KeyImputManager.freePlayerMouvement();
+        rigidbody.velocity = Vector3.zero;
     }
 
 
 
-    }
+}
 
 
 
