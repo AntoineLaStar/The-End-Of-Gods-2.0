@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Ennemie1 : Ennemie {
 
+    private void Start()
+    {
+        degat = 10;
+    }
+
     public override void GiveMoney()
     {
         Player_Info.addMoney(200);
