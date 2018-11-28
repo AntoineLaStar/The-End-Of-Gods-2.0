@@ -61,22 +61,14 @@ public static class KeyImputManager
 
     private static void InitializeDictionary()
     {
-        try
+
+        keyMapping = new Dictionary<string, KeyCode>();
+        for (int i = 0; i < keyMaps.Length; ++i)
         {
-            keyMapping = new Dictionary<string, KeyCode>();
-            for (int i = 0; i < keyMaps.Length; ++i)
-            {
-                keyMapping.Add(keyMaps[i], defaults[i]);
-            }
-            isInitialize = true;
-            ControlController.controlController.SaveGame();
+            keyMapping.Add(keyMaps[i], defaults[i]);
         }
-        catch
-        {
-
-        }
-
-
+        isInitialize = true;
+        ControlController.controlController.SaveGame();
     }
 
     public static void SetKeyMap(string keyMap, KeyCode key)

@@ -33,6 +33,10 @@ TagManager:
   - OutsideDoor
   - Music
   - coin
+  - boss
+  - MeteoriteDeBase
+  - WallOfFire
+  - MeteoriteClone
   layers:
   - Default
   - TransparentFX
@@ -72,6 +76,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 4278607981
+    locked: 0
+  - name: boss
+    uniqueID: 3958571779
     locked: 0
   - name: Floor
     uniqueID: 4254944689

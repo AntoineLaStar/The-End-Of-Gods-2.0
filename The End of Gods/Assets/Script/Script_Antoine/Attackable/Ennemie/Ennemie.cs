@@ -74,12 +74,13 @@ public class Ennemie : MonoBehaviour,Attackable {
 
     public virtual void GiveMoney()
     {
-        Player_Info.addMoney(0);
+        Player_Info.addMoney(1000);
     }
 
     public void DealDamage(int damage)
     {
         currentHealth -= damage;
+        print(currentHealth);
         triggerHitSplat(damage);
         if (currentHealth <= 0)
         {
@@ -89,7 +90,7 @@ public class Ennemie : MonoBehaviour,Attackable {
 
     public virtual void attackPlayer()
     {
-        Player_Info.hit();
+        Player_Info.hit(degat);
         playAttackAnimation();
     }
 

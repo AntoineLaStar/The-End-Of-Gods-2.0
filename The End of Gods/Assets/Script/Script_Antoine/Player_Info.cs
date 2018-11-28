@@ -10,7 +10,7 @@ public static class Player_Info
 {
 
     public static int startingHealth = 100;
-    public static int currentHealth;
+    public static int currentHealth= startingHealth;
     public static float defence = 0.0f;
     public static int degat = 75;
     public static int money = 500;
@@ -101,20 +101,29 @@ public static class Player_Info
 
     public static void afficherMoney()
     {
+      
         GameObject.FindGameObjectWithTag("coin").GetComponent<Text>().text = Player_Info.money.ToString();
     }
 
-    public static void hit()
+    public static void afficherHealth()
+    {
+        GameObject.FindGameObjectWithTag("heart").GetComponent<Text>().text = Player_Info.currentHealth.ToString();
+    }
+
+    public static void hit(int ennemyDamage)
     {
         PlayerPlatformerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
         if (player.immunity == false && player.isShielded == false && player.isInvisible)
         {
-            player.dealDamage(degat);
+            player.dealDamage(ennemyDamage);
             player.resetImmunity();
             player.immunity = true;
         }
     }
-
+    public static void dealDamage(int degat)
+    {
+        hit(degat);
+    }
 
 
 }
