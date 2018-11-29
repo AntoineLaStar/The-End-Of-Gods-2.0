@@ -43,11 +43,11 @@ public class Ennemie2 : Ennemie {
             if (range > minDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, target.position.y), speed * Time.deltaTime);
-                animator.SetBool("Walking", true);
+                animator.SetBool("Walk", true);
             }
             else
             {
-                animator.SetBool("Walking", false);
+                animator.SetBool("Walk", false);
             }
 
             CheckCollisionWithPlayer();

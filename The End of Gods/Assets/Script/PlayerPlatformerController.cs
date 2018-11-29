@@ -13,6 +13,7 @@ public class PlayerPlatformerController : PhysicsObject
     float timeForNextDash;
     float PlayerInvisibleDelay = Player_Info.invisibilityDelay;
     float timeForNextInvisiblity;
+    public GameObject background;
     public bool isShielded = false;
     public bool isInvisible = false;
     public bool immunity = true;
@@ -25,6 +26,10 @@ public class PlayerPlatformerController : PhysicsObject
 
     bool isGauche;
 
+    [SerializeField] public Sprite hellBackground;
+    [SerializeField] public Sprite outsideBackground;
+    [SerializeField] public Sprite castleBackground;
+
     void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
@@ -33,6 +38,24 @@ public class PlayerPlatformerController : PhysicsObject
         timeForNextDash = PlayerDashDelay;
         timeForNextInvisiblity = PlayerInvisibleDelay;
         resetImmunity();
+        SetBackground();
+    }
+
+    private void SetBackground()
+    {
+
+        if (Player_Info.background == Player_Info.Background.hell)
+        {
+            background.GetComponent<SpriteRenderer>().sprite = hellBackground;
+        }
+        else if (Player_Info.background == Player_Info.Background.outside)
+        {
+            background.GetComponent<SpriteRenderer>().sprite = outsideBackground;
+        }
+        else if (Player_Info.background == Player_Info.Background.castle)
+        {
+            background.GetComponent<SpriteRenderer>().sprite = castleBackground;
+        }
     }
 
     protected override void ComputeVelocity()

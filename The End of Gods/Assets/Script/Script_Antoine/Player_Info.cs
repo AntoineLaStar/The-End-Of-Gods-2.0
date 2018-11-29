@@ -30,6 +30,9 @@ public static class Player_Info
     public static float invisibilityDelay = 3;
     public static bool ableToInvisibility = true;
 
+    public enum Background { hell, outside, castle };
+    public static Background background = Background.hell;
+
     public static int CurrentHealth
     {
         set { currentHealth = value; }

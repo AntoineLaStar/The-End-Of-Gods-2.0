@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class changeSound : MonoBehaviour {
     [SerializeField] AudioClip adventureMusic;
-	
-	void Start () {
-        AudioSource theMusic = GameObject.FindGameObjectWithTag("Music").GetComponent<AudioSource>();
+
+    void Start () {
+   
         Invoke("reduceHubMusicTo0",2f);       
     }
 

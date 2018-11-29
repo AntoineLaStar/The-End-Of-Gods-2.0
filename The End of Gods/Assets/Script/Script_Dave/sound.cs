@@ -12,14 +12,6 @@ public class sound : MonoBehaviour
     {
         Swoosh = Resources.Load<AudioClip>("Swoosh");
         sourceAudio = GetComponent<AudioSource>();
-
-      
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     public static void PlaySound(string clip)
@@ -27,14 +19,12 @@ public class sound : MonoBehaviour
         //sourceAudio.PlayOneShot(Swoosh);
         foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
         {
-
-
             if (Input.GetKey(vKey))
             {
                 keyPressed = vKey;
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
                 {
-                    //sourceAudio.Play();
+                    sourceAudio.Play();
                 }
             }
         }

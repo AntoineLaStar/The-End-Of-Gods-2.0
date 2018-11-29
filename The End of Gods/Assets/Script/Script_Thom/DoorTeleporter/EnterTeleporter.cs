@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class EnterTeleporter : MonoBehaviour {
     [SerializeField] string linkScene;
-   static string tptag;
+    static string tptag;
     [SerializeField] Canvas errorMessage;
     static bool teleportHasBeenUsed = false;
 	void Start () {
@@ -40,7 +40,7 @@ public class EnterTeleporter : MonoBehaviour {
 
     private void enterTeleporter()
     {
-        if (TeleporterAccesManager.GetAccess(tag))
+        if (TeleporterAccesManager.GetAccess(tptag))
         {
         teleportHasBeenUsed = true;
         SceneManager.LoadScene(linkScene);

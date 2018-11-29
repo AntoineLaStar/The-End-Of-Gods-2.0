@@ -252,7 +252,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1115387183128630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.3, y: -16.5, z: -1.2373047}
+  m_LocalPosition: {x: 0.3, y: -15.1, z: -1.2373047}
   m_LocalScale: {x: 0.24725, y: 0.242, z: 1}
   m_Children:
   - {fileID: 4190968718215856}
@@ -546,9 +546,13 @@ MonoBehaviour:
   jumpTakeOffSpeed: 12
   isAttacking: 0
   ableToDash: 1
+  background: {fileID: 1894380446465536}
   isShielded: 0
   isInvisible: 0
   immunity: 1
+  hellBackground: {fileID: 21300000, guid: 8f8694e6fb59afd408a3b7351875118a, type: 3}
+  outsideBackground: {fileID: 21300000, guid: e1311633a6cf31941bfecc01f4367db0, type: 3}
+  castleBackground: {fileID: 21300000, guid: 63f1a3db80fe50c41a789d4c88fb63ee, type: 3}
 --- !u!114 &114304989873204372
 MonoBehaviour:
   m_ObjectHideFlags: 1

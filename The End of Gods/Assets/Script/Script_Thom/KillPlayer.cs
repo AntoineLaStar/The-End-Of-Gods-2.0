@@ -32,7 +32,6 @@ public class KillPlayer : MonoBehaviour {
     }
     private void TeleportPlayer()
     {
-        Animator playerAnimator = gameObject.GetComponent<Animator>();
         SceneManager.LoadScene("Scenes/Hell");
     }
 

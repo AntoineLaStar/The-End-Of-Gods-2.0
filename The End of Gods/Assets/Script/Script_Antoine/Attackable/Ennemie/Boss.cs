@@ -31,7 +31,7 @@ public class Boss : Ennemie {
         pushPlayer();
         if (attackTimer <= 0)
         {
-            attackTimer = 1500f;
+            attackTimer = 15f;
             attack(getPattern());
         }
         else
@@ -46,6 +46,7 @@ public class Boss : Ennemie {
     {
         if (pushThePlayer)
         {
+            KeyImputManager.LockPlayerMouvement();
             GameObject.FindGameObjectWithTag("Player").transform.SetPositionAndRotation(new Vector3(GameObject.FindGameObjectWithTag("Player").transform.position.x - .2f, GameObject.FindGameObjectWithTag("Player").transform.position.y + 0.2f, GameObject.FindGameObjectWithTag("Player").transform.position.z),
             GameObject.FindGameObjectWithTag("Player").transform.rotation);
             updatePushTimer();
@@ -57,8 +58,10 @@ public class Boss : Ennemie {
         pushThePlayerTimer -= Time.deltaTime;
         if (pushThePlayerTimer < 0f)
         {
+            KeyImputManager.freePlayerMouvement();
             pushThePlayer = false;
             pushThePlayerTimer = 1f;
+           
         }
     }
 
@@ -94,7 +97,7 @@ public class Boss : Ennemie {
     private int getPattern()
     {
         int rnd = UnityEngine.Random.Range(1, 10);
-        return 1;
+        return (rnd % 2) + 1;
     }
 
     private void throwMeteor()
@@ -103,7 +106,6 @@ public class Boss : Ennemie {
         {
             if (meteorTimer <= 0f)
             {
-              
                     GameObject meteorClone = Instantiate(Meteor, new Vector3(genererXPositionMeteorite(), genererYPositionMeteorite(), gameObject.transform.position.z), gameObject.transform.rotation);
                     meteorClone.tag = "MeteoriteClone";
                     meteorTimer = 0.3f;              
@@ -113,10 +115,7 @@ public class Boss : Ennemie {
                 meteorTimer -= Time.deltaTime;
             }
         }
-       
         meteorAttackTimer -= Time.deltaTime;
-        
-      
     }
 
     private float genererXPositionMeteorite()
@@ -128,9 +127,7 @@ public class Boss : Ennemie {
     }
     private float genererYPositionMeteorite()
     {
-        float nouvellePositionY = 0;
         float positionYJoueur = GameObject.FindGameObjectWithTag("Player").transform.position.y+15;
-        nouvellePositionY = UnityEngine.Random.Range(positionYJoueur - 2, positionYJoueur + 2);
         return positionYJoueur;
     }
 
@@ -145,7 +142,7 @@ public class Boss : Ennemie {
         switch (pattern)
         {
             case 1:
-                meteorAttackTimer = 1000f;
+                meteorAttackTimer = 10f;
                 break;
             case 2:
                 isFireWallAttack=true;
@@ -192,9 +189,7 @@ public class Boss : Ennemie {
         }
             if (collision.tag == "Player")
             {
-                print("eegregeg");
                 pushThePlayer = true;
-                
             }
         
     }
@@ -203,6 +198,8 @@ public class Boss : Ennemie {
     {
         pushThePlayer = true;
         Player_Info.hit(degat);
+
+
     }
     public override void Dying()
     {
