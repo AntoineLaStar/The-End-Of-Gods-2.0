@@ -24,7 +24,7 @@ public class EnterDoor : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && collision.name != "knight_base")
         {
             foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
             {

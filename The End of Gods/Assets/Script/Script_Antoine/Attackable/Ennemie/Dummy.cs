@@ -23,13 +23,20 @@ public class Dummy : Ennemie
 
     public override void InitializeInfo()
     {
-        startingHealth = 999999;
+        startingHealth = 99;
+        degat = 0;
+        attackDelay = 0f;
+        attackDelayLeft = attackDelay;
         currentHealth = startingHealth;
     }
 
-    public void triggerHurtAnimation()
+    public override void triggerHurtAnimation()
     {
-        animator.SetTrigger("IsAttacked");
+        animator.SetTrigger("attacked");
     }
 
+    public override void attackPlayer()
+    {
+
+    }
 }

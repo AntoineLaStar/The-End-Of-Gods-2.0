@@ -6,11 +6,11 @@ public class AfficherCoinOnLoad : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Player_Info.afficherMoney();
+       
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        Player_Info.afficherMoney();
+    }
 }

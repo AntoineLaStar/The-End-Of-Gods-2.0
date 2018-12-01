@@ -82,6 +82,7 @@ public class Ennemie : MonoBehaviour,Attackable {
     {
         currentHealth -= damage;
         triggerHitSplat(damage);
+        triggerHurtAnimation();
         if (currentHealth <= 0)
         {
             Dying();
@@ -125,6 +126,11 @@ public class Ennemie : MonoBehaviour,Attackable {
     public void decrementDelay()
     {
         attackDelayLeft -= Time.deltaTime;
+    }
+
+    public virtual void triggerHurtAnimation()
+    {
+        print("No hurt animation");
     }
 
     public virtual void DyingAnimation()

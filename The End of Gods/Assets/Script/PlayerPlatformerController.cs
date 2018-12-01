@@ -19,11 +19,12 @@ public class PlayerPlatformerController : PhysicsObject
     public bool isInvisible = false;
     public bool immunity = true;
     private float immunityTimeLeft;
+    [SerializeField] AudioSource audioHurt;
 
     private Animator animator;
     private SpriteRenderer sprite;
     private Rigidbody2D rigidbody;
-    Collider2D test;
+    Collider2D collider;
 
     bool isGauche;
 
@@ -138,18 +139,16 @@ public class PlayerPlatformerController : PhysicsObject
                                 Invoke("cancelInvisibility", Player_Info.invisibilityLenght);
                             }
                         }
-
                     }
 
                     if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Left"))
                     {
                         if (isGauche == false)
                         {
-                            test = GameObject.FindGameObjectWithTag("SwordCollider").GetComponent<Collider2D>();
+                            collider = GameObject.FindGameObjectWithTag("SwordCollider").GetComponent<Collider2D>();
                             sprite.flipX = !sprite.flipX;
-                            test.offset *= -1;
+                            collider.offset *= -1;
                         }
-
 
                         isGauche = true;
                     }
@@ -157,9 +156,9 @@ public class PlayerPlatformerController : PhysicsObject
                     {
                         if (isGauche == true)
                         {
-                            test = GameObject.FindGameObjectWithTag("SwordCollider").GetComponent<Collider2D>();
+                            collider = GameObject.FindGameObjectWithTag("SwordCollider").GetComponent<Collider2D>();
                             sprite.flipX = !sprite.flipX;
-                            test.offset *= -1;
+                            collider.offset *= -1;
                         }
 
                         isGauche = false;
@@ -316,10 +315,17 @@ public class PlayerPlatformerController : PhysicsObject
     {
         Player_Info.currentHealth -= amount;
         playerHurtAnimation();
+        playerHurtSound();
         if (Player_Info.currentHealth <= 0)
         {
             killPlayer();
         }
+    }
+
+    public void playerHurtSound()
+    {
+        audioHurt.enabled = true;
+        audioHurt.Play();
     }
 
     private void playerHurtAnimation()
@@ -332,7 +338,6 @@ public class PlayerPlatformerController : PhysicsObject
 
     public void killPlayer()
     {
-        print("sucela");
         KeyImputManager.LockPlayerMouvement();
         animator.SetTrigger("dying");
         resetPlayer();
