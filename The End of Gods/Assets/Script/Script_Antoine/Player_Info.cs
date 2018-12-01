@@ -25,6 +25,7 @@ public static class Player_Info
     public static float dashDelay = 1;
     public static bool ableToDash = true;
     public static float immunityTime = 1.5f;
+    public static bool grounded;
 
     public static float invisibilityLenght = 2;
     public static float invisibilityDelay = 3;
@@ -116,7 +117,7 @@ public static class Player_Info
     public static void hit(int ennemyDamage)
     {
         PlayerPlatformerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
-        if (player.immunity == false && player.isShielded == false && player.isInvisible)
+        if (player.immunity == false && player.isShielded == false && player.isInvisible == false)
         {
             player.dealDamage(ennemyDamage);
             player.resetImmunity();

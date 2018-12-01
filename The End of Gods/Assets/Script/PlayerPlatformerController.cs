@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerPlatformerController : PhysicsObject
 {
@@ -32,6 +33,7 @@ public class PlayerPlatformerController : PhysicsObject
 
     void Awake()
     {
+        KeyImputManager.freePlayerMouvement();
         sprite = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
@@ -43,7 +45,6 @@ public class PlayerPlatformerController : PhysicsObject
 
     private void SetBackground()
     {
-
         if (Player_Info.background == Player_Info.Background.hell)
         {
             background.GetComponent<SpriteRenderer>().sprite = hellBackground;
@@ -133,9 +134,11 @@ public class PlayerPlatformerController : PhysicsObject
                             {
                                 Player_Info.ableToInvisibility = false;
                                 decreaseOpacity();
+                                isInvisible = true;
                                 Invoke("cancelInvisibility", Player_Info.invisibilityLenght);
                             }
                         }
+
                     }
 
                     if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Left"))
@@ -164,29 +167,14 @@ public class PlayerPlatformerController : PhysicsObject
 
                     if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Attack"))
                     {
-                   
-                        if (HitTracker.HaveHit == false)
-                        {
-                                sound.PlaySound("Swoosh");
-                              if (grounded == true)
-                           {
-
-                                    HitTracker.HaveHit = true;
-                                    Invoke("delockAttack", Player_Info.attackDelay);
-                                    animator.Play("knight_Attack");
-                                }               
-                        }
+                        attack();
                     }
                     targetVelocity = move * maxSpeed;
                 }
             }
             animator.SetFloat("speed", Mathf.Abs(velocity.x) / maxSpeed);
             animator.SetBool("grounded", grounded);
-
-        
         }
-
-        
 
         checkIfDefenceIsReleased();
 
@@ -194,6 +182,32 @@ public class PlayerPlatformerController : PhysicsObject
     public void delockAttack()
     {
         HitTracker.HaveHit = false;
+    }
+
+    public void attack()
+    {
+        if (HitTracker.HaveHit == false)
+        {
+            sound.PlaySound("Swoosh");
+            if (grounded == true)
+            {
+                HitTracker.HaveHit = true;
+                Invoke("delockAttack", Player_Info.attackDelay);
+                animator.Play("knight_Attack");
+            }
+            else
+            {
+                try
+                {
+                    if (Player_Info.characterName.Contains("knight_3"))
+                    animator.SetTrigger("attackJump");
+                }
+                catch
+                {
+                    print("Air animation not yet implemented");
+                }
+            }
+        }
     }
 
 
@@ -249,14 +263,13 @@ public class PlayerPlatformerController : PhysicsObject
                 keyPressed = vKey;
                 if (keyPressed.ToString() == KeyImputManager.GetKeyBind("Defence") && gameObject.name.Contains("knight_2"))
                 {
-                    isInvisible = false;
+                    isShielded = false;
                     increaseOpacity();
                     unlockPlayerMovement();
                 }
             }
         }
     }
-
 
     public void playerDash()
     {
@@ -279,6 +292,7 @@ public class PlayerPlatformerController : PhysicsObject
     public void cancelInvisibility()
     {
         timeForNextInvisiblity = PlayerInvisibleDelay;
+        isInvisible = false;
         increaseOpacity();
     }
 
@@ -302,6 +316,10 @@ public class PlayerPlatformerController : PhysicsObject
     {
         Player_Info.currentHealth -= amount;
         playerHurtAnimation();
+        if (Player_Info.currentHealth <= 0)
+        {
+            killPlayer();
+        }
     }
 
     private void playerHurtAnimation()
@@ -310,6 +328,28 @@ public class PlayerPlatformerController : PhysicsObject
         KeyImputManager.LockPlayerMouvement();
         Invoke("unlockPlayerMovement", 0.1f);
 
+    }
+
+    public void killPlayer()
+    {
+        print("sucela");
+        KeyImputManager.LockPlayerMouvement();
+        animator.SetTrigger("dying");
+        resetPlayer();
+        Invoke("TeleportPlayer", 1f);
+    }
+
+    public void TeleportPlayer()
+    {
+        SceneManager.LoadScene("Scenes/Hell");
+    }
+
+    public void resetPlayer()
+    {
+        Player_Info.CharacterName = "knight_base";
+        Player_Info.currentHealth = Player_Info.startingHealth;
+        Player_Info.background = Player_Info.Background.hell;
+        SetBackground();
     }
 
     public void unlockPlayerMovement()

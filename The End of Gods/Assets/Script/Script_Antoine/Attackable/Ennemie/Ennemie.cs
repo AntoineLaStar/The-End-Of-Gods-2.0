@@ -43,6 +43,7 @@ public class Ennemie : MonoBehaviour,Attackable {
                         resetImmunity();
                     }
                 }
+
                 if (hitColliders[i].gameObject.tag == "Player")
                 {
                     if (!dying  && attackDelayLeft <= 0)
@@ -80,7 +81,6 @@ public class Ennemie : MonoBehaviour,Attackable {
     public void DealDamage(int damage)
     {
         currentHealth -= damage;
-        print(currentHealth);
         triggerHitSplat(damage);
         if (currentHealth <= 0)
         {

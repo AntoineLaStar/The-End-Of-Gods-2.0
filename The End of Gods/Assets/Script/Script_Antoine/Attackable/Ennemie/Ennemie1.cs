@@ -9,11 +9,12 @@ public class Ennemie1 : Ennemie {
     GameObject player;
     Transform target;
     float range;
-
+    Rigidbody2D rigidbody;
 
     private void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+        rigidbody = gameObject.GetComponent<Rigidbody2D>();
         InitializeInfo();
         resetImmunity();
     }

@@ -141,7 +141,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1ff4508289430694eb2011e66f64f6d8, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -720,7 +720,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f0fda0d0f26307a42a5196b88eae74b6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -831,9 +831,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1421890905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b650f278ce67726409a4665ac8ca8e50, type: 3}
+  m_Script: {fileID: 11500000, guid: 32aa77550f2ccee48b140b12ef6334f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  adventureMusic: {fileID: 8300000, guid: f0fda0d0f26307a42a5196b88eae74b6, type: 3}
 --- !u!1001 &1433676715
 Prefab:
   m_ObjectHideFlags: 0

@@ -68,7 +68,11 @@ public static class KeyImputManager
             keyMapping.Add(keyMaps[i], defaults[i]);
         }
         isInitialize = true;
-        ControlController.controlController.SaveGame();
+        try
+        {
+            ControlController.controlController.SaveGame();
+        }
+        catch { }
     }
 
     public static void SetKeyMap(string keyMap, KeyCode key)
@@ -158,5 +162,5 @@ public static class KeyImputManager
     {
         return mouvementLock;
     }
-   
+
 }
