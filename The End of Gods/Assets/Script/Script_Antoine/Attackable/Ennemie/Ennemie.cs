@@ -119,6 +119,7 @@ public class Ennemie : MonoBehaviour,Attackable {
 
     public virtual void Dying()
     {
+        stopMusic();
         DyingAnimation();
         Destroy();
     }
@@ -139,5 +140,9 @@ public class Ennemie : MonoBehaviour,Attackable {
 
     public virtual void playAttackAnimation()
     {
+    }
+    public virtual void stopMusic()
+    {
+        
     }
 }

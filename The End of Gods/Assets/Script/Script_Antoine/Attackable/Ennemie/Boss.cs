@@ -40,6 +40,7 @@ public class Boss : Ennemie {
         }
         throwMeteor();
         FireWallAttack();
+        GererImmunity();
     }
 
     private void pushPlayer()
@@ -182,10 +183,13 @@ public class Boss : Ennemie {
 
         if (collision.tag == "SwordCollider")
         {
+            if (immunity == false)
+            {
 
-            playSound();
-            DealDamage(Player_Info.Degat);
-            resetImmunity();
+                playSound();
+                DealDamage(Player_Info.Degat);
+                resetImmunity();
+            }
         }
             if (collision.tag == "Player")
             {
@@ -203,7 +207,12 @@ public class Boss : Ennemie {
     }
     public override void Dying()
     {
-  
+        stopMusic();
         Destroy();
+    }
+    public override void stopMusic()
+    {
+        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+        audioSource.enabled = false; ;
     }
 }
