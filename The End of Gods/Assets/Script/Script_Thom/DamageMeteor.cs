@@ -10,7 +10,7 @@ public class DamageMeteor : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            Player_Info.dealDamage(10);
+            Player_Info.dealDamage(10 * Player_Info.ngPlus);
             
         }
     }

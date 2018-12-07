@@ -30,6 +30,7 @@ public static class Player_Info
     public static float invisibilityLenght = 2;
     public static float invisibilityDelay = 3;
     public static bool ableToInvisibility = true;
+    public static int ngPlus = 1;
 
     public enum Background { hell, outside, castle };
     public static Background background = Background.hell;
@@ -91,6 +92,10 @@ public static class Player_Info
     {
         get { return money; }
     }
+    public static int NgPlus
+    {
+        get { return ngPlus; }
+    }
 
     public static void reduceMoney(int moneyToRemove)
     {
@@ -101,6 +106,11 @@ public static class Player_Info
     {
         money += amount;
         afficherMoney();
+    }
+
+    public static void increaseNgPlus()
+    {
+        ngPlus++;
     }
 
     public static void afficherMoney()

@@ -16,13 +16,15 @@ public class Boss : Ennemie {
     bool isFireWallAttack = false;
     bool pushThePlayer = false;
     float pushThePlayerTimer = 1f;
+    public RectTransform healthbar;
+
 
 
 
     void Start () {
         InitializeInfo();
         resetImmunity();
-        degat = 10;
+        degat = 10 * Player_Info.ngPlus;
 	}
 	
 	// Update is called once per frame
@@ -135,7 +137,7 @@ public class Boss : Ennemie {
     public override void InitializeInfo()
     {
         startingHealth = 500;
-        currentHealth = startingHealth;
+        currentHealth = startingHealth ;
     }
 
     public void attack(int pattern)
@@ -185,9 +187,10 @@ public class Boss : Ennemie {
         {
             if (immunity == false)
             {
-
+                
                 playSound();
                 DealDamage(Player_Info.Degat);
+                updateLife(currentHealth);
                 resetImmunity();
             }
         }
@@ -207,12 +210,35 @@ public class Boss : Ennemie {
     }
     public override void Dying()
     {
+        LockTeleporter();
         stopMusic();
         Destroy();
+        restartGame();
     }
+
+    private void restartGame()
+    {
+        PlayerPlatformerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
+        Player_Info.increaseNgPlus();
+        player.resetPlayer();
+        player.TeleportPlayerToMainMenu();
+
+        
+    }
+
+    private void LockTeleporter()
+    {
+        TeleporterAccesManager.lockAllTeleporter();
+    }
+
     public override void stopMusic()
     {
         AudioSource audioSource = gameObject.GetComponent<AudioSource>();
         audioSource.enabled = false; ;
+    }
+    private void updateLife(int newLife)
+    {
+   
+        healthbar.sizeDelta = new Vector2(newLife, healthbar.sizeDelta.y);
     }
 }

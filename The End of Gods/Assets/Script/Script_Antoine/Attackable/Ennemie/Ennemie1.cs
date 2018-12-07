@@ -48,14 +48,14 @@ public class Ennemie1 : Ennemie {
 
     public override void GiveMoney()
     {
-        Player_Info.addMoney(200);
+        Player_Info.addMoney(200 * Player_Info.ngPlus);
     }
 
     public override void InitializeInfo()
     {
        startingHealth = 100;
-       currentHealth = startingHealth;
-       degat = 10;
+       currentHealth = startingHealth * Player_Info.ngPlus;
+       degat = 10 * Player_Info.ngPlus;
        attackDelay = 1f;
        attackDelayLeft = attackDelay;
     }

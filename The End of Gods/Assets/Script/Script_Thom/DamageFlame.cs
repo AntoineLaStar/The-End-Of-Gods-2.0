@@ -18,7 +18,7 @@ public class DamageFlame : MonoBehaviour {
         if(collision.tag == "Player")
         {
             
-            Player_Info.dealDamage(25);
+            Player_Info.dealDamage(25 * Player_Info.ngPlus);
             pushThePlayer = true;
         }
     }

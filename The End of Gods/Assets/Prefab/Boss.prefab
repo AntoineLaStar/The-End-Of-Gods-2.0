@@ -222,6 +222,7 @@ MonoBehaviour:
     type: 2}
   Meteor: {fileID: 1999495479230808, guid: 0724184d9e95bf4429055c0f7f8ae60e, type: 2}
   WallOfFire: {fileID: 1149746802565834, guid: 79538d4a4b07da546b38ba7dcdee062a, type: 2}
+  healthbar: {fileID: 0}
 --- !u!212 &212830728175035790
 SpriteRenderer:
   m_ObjectHideFlags: 1

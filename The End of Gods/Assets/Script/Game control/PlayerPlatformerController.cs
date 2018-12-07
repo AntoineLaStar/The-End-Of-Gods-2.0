@@ -349,6 +349,11 @@ public class PlayerPlatformerController : PhysicsObject
         SceneManager.LoadScene("Scenes/Hell");
     }
 
+    public void TeleportPlayerToMainMenu()
+    {
+        SceneManager.LoadScene("Scenes/Menu_Scene");
+    }
+
     public void resetPlayer()
     {
         Player_Info.CharacterName = "knight_base";
