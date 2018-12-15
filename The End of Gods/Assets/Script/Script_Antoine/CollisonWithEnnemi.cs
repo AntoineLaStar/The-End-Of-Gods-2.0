@@ -6,14 +6,11 @@ public class CollisonWithEnnemi : MonoBehaviour
 {
 
     KeyCode keyPressed = KeyCode.None;
-    GameObject player;
-  
     float PlayerAttackDelay = Player_Info.attackDelay;
    
     bool attack;
 
     void Start () {
-        player = GameObject.FindGameObjectWithTag("Player");
         Player_Info.timeForNextAttack = PlayerAttackDelay;
       
     }
@@ -37,7 +34,6 @@ public class CollisonWithEnnemi : MonoBehaviour
                     gameObject.GetComponent<Collider2D>().enabled = true;
                     Invoke("enableColliderWeapon", 0.5f);
                 }
-
             }
         }
 

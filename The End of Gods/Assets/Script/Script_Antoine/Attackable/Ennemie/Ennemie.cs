@@ -43,6 +43,7 @@ public class Ennemie : MonoBehaviour,Attackable {
                         resetImmunity();
                     }
                 }
+
                 if (hitColliders[i].gameObject.tag == "Player")
                 {
                     if (!dying  && attackDelayLeft <= 0)
@@ -74,13 +75,14 @@ public class Ennemie : MonoBehaviour,Attackable {
 
     public virtual void GiveMoney()
     {
-        Player_Info.addMoney(0);
+        Player_Info.addMoney(1000);
     }
 
     public void DealDamage(int damage)
     {
         currentHealth -= damage;
         triggerHitSplat(damage);
+        triggerHurtAnimation();
         if (currentHealth <= 0)
         {
             Dying();
@@ -89,7 +91,7 @@ public class Ennemie : MonoBehaviour,Attackable {
 
     public virtual void attackPlayer()
     {
-        Player_Info.hit();
+        Player_Info.hit(degat);
         playAttackAnimation();
     }
 
@@ -117,6 +119,7 @@ public class Ennemie : MonoBehaviour,Attackable {
 
     public virtual void Dying()
     {
+        stopMusic();
         DyingAnimation();
         Destroy();
     }
@@ -126,11 +129,20 @@ public class Ennemie : MonoBehaviour,Attackable {
         attackDelayLeft -= Time.deltaTime;
     }
 
+    public virtual void triggerHurtAnimation()
+    {
+        print("No hurt animation");
+    }
+
     public virtual void DyingAnimation()
     {
     }
 
     public virtual void playAttackAnimation()
     {
+    }
+    public virtual void stopMusic()
+    {
+        
     }
 }

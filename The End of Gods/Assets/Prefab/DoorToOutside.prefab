@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4393423138589992}
   m_Layer: 0
   m_Name: DoorToOutside
-  m_TagString: Untagged
+  m_TagString: room3Enter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,9 +38,10 @@ GameObject:
   - component: {fileID: 114084411179093144}
   - component: {fileID: 114708718166551338}
   - component: {fileID: 61374310348976918}
+  - component: {fileID: 114556431021271100}
   m_Layer: 0
   m_Name: DoorSprite
-  m_TagString: OutsideDoor
+  m_TagString: room2Exit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1830601212910074}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.31, y: -1.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4.836987, y: 5.077645, z: 1}
   m_Children: []
   m_Father: {fileID: 4393423138589992}
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1756716100370294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.583166, y: 3.5035164, z: 0.02734375}
+  m_LocalPosition: {x: 204.03, y: 11.01, z: 0.02734375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4364726328058530}
@@ -81,7 +82,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.011861235, y: -0.25987887}
@@ -108,7 +109,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b08dc56d657894f8b62cd1a79c5663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  linkScene: Scenes/OutsideCastle
+  linkScene: Scenes/room3
+--- !u!114 &114556431021271100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1830601212910074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf150e372da7074e91dee7269b6e8ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  messageCanvas: {fileID: 0}
 --- !u!114 &114708718166551338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952d021d69e6f2a4f962f385b8ce8743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagDoor: OutsideDoor
+  tagDoor: room2Exit
 --- !u!212 &212438158599624508
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -154,7 +167,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -40022607
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9f7c10934d5fbed4f816032e6a87c2ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

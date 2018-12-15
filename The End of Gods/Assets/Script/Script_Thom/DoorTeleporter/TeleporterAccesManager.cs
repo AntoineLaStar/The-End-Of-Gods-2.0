@@ -75,6 +75,13 @@ public class TeleporterAccesManager : MonoBehaviour {
         }
         return teleporterAcces;
     }
+    public static void lockAllTeleporter()
+    {
+        for(int i= 0; i < telepoterName.Length; i++)
+        {
+            teleporterAcces[telepoterName[i]] = false;
+        }
+    }
 
 
 }

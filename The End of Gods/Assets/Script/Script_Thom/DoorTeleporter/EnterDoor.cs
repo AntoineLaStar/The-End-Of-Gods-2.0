@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class EnterDoor : MonoBehaviour
 {
+    [SerializeField] public Sprite backgroundSprite;
+    [SerializeField] public Player_Info.Background backgroundToSet;
+
     [SerializeField] string linkScene;
     static string tag;
     static bool DoorHasBeenUsed = false;
@@ -21,7 +24,7 @@ public class EnterDoor : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && collision.name != "knight_base")
         {
             foreach (KeyCode vKey in System.Enum.GetValues(typeof(KeyCode)))
             {
@@ -41,10 +44,9 @@ public class EnterDoor : MonoBehaviour
 
     private void enterTeleporter()
     {
-        
-            DoorHasBeenUsed = true;
-            SceneManager.LoadScene(linkScene);
-        
+        DoorHasBeenUsed = true;
+        SceneManager.LoadScene(linkScene);
+        Background();
     }
     static public void setTeleportHasBeenUsed()
     {
@@ -54,5 +56,12 @@ public class EnterDoor : MonoBehaviour
     {
         return tag;
     }
-    
+
+    public void Background()
+    {
+        Player_Info.background = backgroundToSet;
+    }
+
+
+
 }

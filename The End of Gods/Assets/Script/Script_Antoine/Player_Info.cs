@@ -10,7 +10,7 @@ public static class Player_Info
 {
 
     public static int startingHealth = 100;
-    public static int currentHealth;
+    public static int currentHealth= startingHealth;
     public static float defence = 0.0f;
     public static int degat = 75;
     public static int money = 500;
@@ -25,10 +25,15 @@ public static class Player_Info
     public static float dashDelay = 1;
     public static bool ableToDash = true;
     public static float immunityTime = 1.5f;
+    public static bool grounded;
 
     public static float invisibilityLenght = 2;
     public static float invisibilityDelay = 3;
     public static bool ableToInvisibility = true;
+    public static int ngPlus = 1;
+
+    public enum Background { hell, outside, castle };
+    public static Background background = Background.hell;
 
     public static int CurrentHealth
     {
@@ -87,6 +92,10 @@ public static class Player_Info
     {
         get { return money; }
     }
+    public static int NgPlus
+    {
+        get { return ngPlus; }
+    }
 
     public static void reduceMoney(int moneyToRemove)
     {
@@ -99,22 +108,36 @@ public static class Player_Info
         afficherMoney();
     }
 
+    public static void increaseNgPlus()
+    {
+        ngPlus++;
+    }
+
     public static void afficherMoney()
     {
+      
         GameObject.FindGameObjectWithTag("coin").GetComponent<Text>().text = Player_Info.money.ToString();
     }
 
-    public static void hit()
+    public static void afficherHealth()
+    {
+        GameObject.FindGameObjectWithTag("heart").GetComponent<Text>().text = Player_Info.currentHealth.ToString();
+    }
+
+    public static void hit(int ennemyDamage)
     {
         PlayerPlatformerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerPlatformerController>();
-        if (player.immunity == false && player.isShielded == false && player.isInvisible)
+        if (player.immunity == false && player.isShielded == false && player.isInvisible == false)
         {
-            player.dealDamage(degat);
+            player.dealDamage(ennemyDamage);
             player.resetImmunity();
             player.immunity = true;
         }
     }
-
+    public static void dealDamage(int degat)
+    {
+        hit(degat);
+    }
 
 
 }

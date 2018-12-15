@@ -61,22 +61,18 @@ public static class KeyImputManager
 
     private static void InitializeDictionary()
     {
+
+        keyMapping = new Dictionary<string, KeyCode>();
+        for (int i = 0; i < keyMaps.Length; ++i)
+        {
+            keyMapping.Add(keyMaps[i], defaults[i]);
+        }
+        isInitialize = true;
         try
         {
-            keyMapping = new Dictionary<string, KeyCode>();
-            for (int i = 0; i < keyMaps.Length; ++i)
-            {
-                keyMapping.Add(keyMaps[i], defaults[i]);
-            }
-            isInitialize = true;
             ControlController.controlController.SaveGame();
         }
-        catch
-        {
-
-        }
-
-
+        catch { }
     }
 
     public static void SetKeyMap(string keyMap, KeyCode key)
@@ -166,5 +162,5 @@ public static class KeyImputManager
     {
         return mouvementLock;
     }
-   
+
 }

@@ -43,11 +43,11 @@ public class Ennemie2 : Ennemie {
             if (range > minDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, target.position.y), speed * Time.deltaTime);
-                animator.SetBool("Walking", true);
+                animator.SetBool("Walk", true);
             }
             else
             {
-                animator.SetBool("Walking", false);
+                animator.SetBool("Walk", false);
             }
 
             CheckCollisionWithPlayer();
@@ -57,14 +57,14 @@ public class Ennemie2 : Ennemie {
 
     public override void GiveMoney()
     {
-        Player_Info.addMoney(250);
+        Player_Info.addMoney(250 * Player_Info.ngPlus);
     }
 
     public override void InitializeInfo()
     {
-        startingHealth = 150;
+        startingHealth = 150 * Player_Info.ngPlus;
         currentHealth = startingHealth;
-        degat = 15;
+        degat = 15 * Player_Info.ngPlus;
         attackDelay = 0.75f;
         attackDelayLeft = attackDelay;
     }

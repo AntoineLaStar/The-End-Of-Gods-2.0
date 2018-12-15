@@ -9,11 +9,12 @@ public class Ennemie1 : Ennemie {
     GameObject player;
     Transform target;
     float range;
-
+    Rigidbody2D rigidbody;
 
     private void Start()
     {
         animator = gameObject.GetComponent<Animator>();
+        rigidbody = gameObject.GetComponent<Rigidbody2D>();
         InitializeInfo();
         resetImmunity();
     }
@@ -37,12 +38,8 @@ public class Ennemie1 : Ennemie {
             if (range > minDistance)
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(target.position.x, transform.position.y), speed * Time.deltaTime);
-                animator.SetBool("Walking", true);
             }
-            else
-            {
-                animator.SetBool("Walking", false);
-            }
+
 
             CheckCollisionWithPlayer();
             verifierSprite();
@@ -51,14 +48,14 @@ public class Ennemie1 : Ennemie {
 
     public override void GiveMoney()
     {
-        Player_Info.addMoney(200);
+        Player_Info.addMoney(200 * Player_Info.ngPlus);
     }
 
     public override void InitializeInfo()
     {
        startingHealth = 100;
-       currentHealth = startingHealth;
-       degat = 10;
+       currentHealth = startingHealth * Player_Info.ngPlus;
+       degat = 10 * Player_Info.ngPlus;
        attackDelay = 1f;
        attackDelayLeft = attackDelay;
     }

@@ -41,7 +41,7 @@ public class SpearClass : MonoBehaviour
                         podiumSpearChangeSprite();
 
                         Instantiate(knight_1);
-                        knight_1.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+                        knight_1.transform.position = gameObject.transform.position;
                         Player_Info.setPlayerGameObject(knight_1);
                         Player_Info.CharacterName = knight_1.name;
                         HitTracker.HaveHit = false;

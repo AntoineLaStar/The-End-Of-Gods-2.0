@@ -27,17 +27,14 @@ public class SwordClass : MonoBehaviour {
             {
                 keyUp = vKey;
 
-
                 if (keyUp.ToString() == KeyImputManager.GetKeyBind("interact"))
                 {
-
-
                     if (collision.gameObject.tag == "Player")
                     {
                         podiumReset();
                         podiumSwordChangeSprite();
                         Instantiate(knight_3);
-                        knight_3.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+                        knight_3.transform.position = gameObject.transform.position;
                         Player_Info.setPlayerGameObject(knight_3);
                         Player_Info.CharacterName = knight_3.name;
                         HitTracker.HaveHit = false;

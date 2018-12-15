@@ -6,6 +6,7 @@ public class Dummy : Ennemie
 {
     private void Start()
     {
+        animator = gameObject.GetComponent<Animator>();
         InitializeInfo();
         resetImmunity();
     }
@@ -24,12 +25,17 @@ public class Dummy : Ennemie
     public override void InitializeInfo()
     {
         startingHealth = 999999;
+        degat = 0;
         currentHealth = startingHealth;
     }
 
-    public void triggerHurtAnimation()
+    public override void triggerHurtAnimation()
     {
-        animator.SetTrigger("IsAttacked");
+        animator.SetTrigger("attacked");
     }
 
+    public override void attackPlayer()
+    {
+
+    }
 }

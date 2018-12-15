@@ -21,16 +21,12 @@ public class unlockTeleporter : MonoBehaviour {
                     {
                         unlockMessage.enabled = false;
                     }
-
                 }
-
             }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
-
         if (!messagehaveBeenShowen)
         {
             if (collision.tag == "Player")
@@ -38,7 +34,11 @@ public class unlockTeleporter : MonoBehaviour {
                 if (!TeleporterAccesManager.GetAccess(tpTag))
                 {
                     TeleporterAccesManager.unlockTeleporteur(tpTag);
-                    TeleporteurInfoController.teleporteurInfoController.SaveGame();
+                    try
+                    {
+                        TeleporteurInfoController.teleporteurInfoController.SaveGame();
+                    }
+                    catch { }
                 }
                 showUnlockMessage();
 
